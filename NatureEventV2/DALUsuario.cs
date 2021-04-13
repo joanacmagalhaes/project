@@ -47,7 +47,28 @@ namespace NatureEventV2
 
             return usuario;
         }
+        public string ValidarExistenciaEmail(string email)
+        {
+            Usuario usuario = new Usuario();
+            string sql = "SELECT * FROM Usuario WHERE IdUsuario = @pEmail";
+            SqlCommand cmd = new SqlCommand(sql, con.MiCnx);
+            SqlParameter pId = new SqlParameter("@pEmail", email);
 
-        
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                usuario.Email = (string)DbConnect.NullFromDb(dr["Email"]);
+            }
+            return usuario.Email;
+        }
+        public void InsertarUsuarios()
+        {
+
+
+
+        }
+
+
     }
 }
