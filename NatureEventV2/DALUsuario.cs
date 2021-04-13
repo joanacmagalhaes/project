@@ -8,7 +8,8 @@ namespace NatureEventV2
 
         DbConnect con;
 
-        public DALUsuario() {
+        public DALUsuario()
+        {
             con = new DbConnect();
         }
 
@@ -69,6 +70,28 @@ namespace NatureEventV2
 
         }
 
+        public void comprobarLoginUsuario(string email, string password)
+        {
+            try
+            {
+                DbConnect db = new DbConnect();
+                string sql = "SELECT * FROM USUARIO WHERE EMAIL = @pEmail AND PASSWORD = @pPassword";
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+                SqlParameter pEmail = new SqlParameter("@pEmail", email);
+                SqlParameter pPassword = new SqlParameter("@pPassword", password);
+                cmd.Parameters.Add(pEmail);
+                cmd.Parameters.Add(pPassword);
+                string returnValue = (string)cmd.ExecuteScalar();
+                if (String.IsNullOrEmpty(returnValue))
+                {
+                    //errorLogin.Visible = true;
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
 
+            }
+        }
     }
 }
