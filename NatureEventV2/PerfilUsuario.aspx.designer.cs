@@ -15,13 +15,13 @@ namespace NatureEventV2
     {
 
         /// <summary>
-        /// Control Panel1.
+        /// Control Image1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
         /// Control TextBoxNombre.
@@ -33,15 +33,6 @@ namespace NatureEventV2
         protected global::System.Web.UI.WebControls.TextBox TextBoxNombre;
 
         /// <summary>
-        /// Control TextBoxApellidos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxApellidos;
-
-        /// <summary>
         /// Control LabelNombre.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace NatureEventV2
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelNombre;
+
+        /// <summary>
+        /// Control TextBoxApellidos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxApellidos;
 
         /// <summary>
         /// Control LabelApellidos.
