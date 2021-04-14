@@ -11,7 +11,7 @@ namespace NatureEventV2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+             
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -29,10 +29,19 @@ namespace NatureEventV2
             {
                 errorPassword.Visible = true;
             }
-            else if (LoginEmpresaUsuario.SelectedIndex == 1)
+            else if (LoginEmpresaUsuario.SelectedIndex == 0)
             {
                 DALUsuario user = new DALUsuario();
-                user.comprobarLoginUsuario(InputEmail.Text, InputPassword.Text);
+                Session["idUser"] = user.comprobarLoginUsuario(InputEmail.Text, InputPassword.Text);
+                if (Session["idUser"] == null)
+                {
+                    errorLogin.Visible = true;
+                }
+                else
+                {
+                    Server.Transfer("Default.aspx");
+                }
+                
             }
 
         }

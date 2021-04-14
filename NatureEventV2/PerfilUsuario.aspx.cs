@@ -11,17 +11,26 @@ namespace NatureEventV2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            DALUsuario dalUser = new DALUsuario();
+            Usuario user = new Usuario();
+
+            user = dalUser.SelectUsuarioById((int?)Session["idUser"]);
+
+            LabelNombre.Text = user.Nombre;
+            LabelApellidos.Text = user.Apellido;
+            LabelEmail.Text = user.Email;
+            LabelTelefono.Text = user.Telefono.ToString();
+            LabelDireccion.Text = user.Direccion;
+            LabelDni.Text = user.Dni;
 
         }
 
         protected void ButtonEditar_Click(object sender, EventArgs e)
         {
-            string nombre = LabelNombre.Text;
-            string apellidos = LabelApellidos.Text;
-            string email = LabelEmail.Text;
-            string telefono = LabelTelefono.Text;
-            string direccion = LabelDireccion.Text;
-            string dni = LabelDni.Text;
+
+            DALUsuario dalUser = new DALUsuario();
+            Usuario user = new Usuario();
+
 
             if (LabelNombre.Visible)
             {
@@ -31,6 +40,8 @@ namespace NatureEventV2
                 LabelTelefono.Visible = false;
                 LabelDireccion.Visible = false;
                 LabelDni.Visible = false;
+
+                ButtonEditar.Text = "Guardar";
 
                 TextBoxNombre.Text = LabelNombre.Text;
                 TextBoxNombre.Visible = true;
@@ -59,6 +70,8 @@ namespace NatureEventV2
                 TextBoxDireccion.Visible = false;
                 TextBoxDni.Visible = false;
 
+                ButtonEditar.Text = "Editar";
+
                 LabelNombre.Text = TextBoxNombre.Text;
                 LabelNombre.Visible = true;
 
@@ -76,6 +89,15 @@ namespace NatureEventV2
 
                 LabelDni.Text = TextBoxDni.Text;
                 LabelDni.Visible = true;
+
+                user.IdUsuario = Convert.ToInt32(Session["idUser"]);
+                user.Nombre = LabelNombre.Text;
+                user.Apellido = LabelApellidos.Text;
+                user.Email = LabelEmail.Text;
+                user.Direccion = LabelDireccion.Text;
+                user.Telefono = Convert.ToInt32(LabelTelefono.Text);
+
+                dalUser.UpdateUsuario(user);
             }
         }
     }

@@ -1,5 +1,10 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace NatureEventV2
 {
@@ -70,28 +75,74 @@ namespace NatureEventV2
 
         }
 
-        public void comprobarLoginUsuario(string email, string password)
+        public int? comprobarLoginUsuario(string email, string password)
         {
             try
             {
                 DbConnect db = new DbConnect();
-                string sql = "SELECT * FROM USUARIO WHERE EMAIL = @pEmail AND PASSWORD = @pPassword";
+                string sql = "SELECT IdUsuario FROM USUARIO WHERE EMAIL = @pEmail AND PWD = @pPassword";
                 SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
-                SqlParameter pEmail = new SqlParameter("@pEmail", email);
-                SqlParameter pPassword = new SqlParameter("@pPassword", password);
+                SqlParameter pEmail = new SqlParameter("@pEmail", System.Data.SqlDbType.NVarChar, 50);
+                SqlParameter pPassword = new SqlParameter("@pPassword", System.Data.SqlDbType.NVarChar, 200);
+                pEmail.Value = email;
+                pPassword.Value = password;
                 cmd.Parameters.Add(pEmail);
                 cmd.Parameters.Add(pPassword);
-                string returnValue = (string)cmd.ExecuteScalar();
-                if (String.IsNullOrEmpty(returnValue))
+
+                int? returnValue = (int)cmd.ExecuteScalar();
+                if (returnValue==null)
                 {
                     //errorLogin.Visible = true;
-                    return;
+                    return null;
+                }
+                else
+                {
+                    
+                    return returnValue;
                 }
             }
             catch (Exception ex)
             {
+                return null;
+            }
+        }
+
+        public void UpdateUsuario(Usuario user)
+        {
+            try
+            {
+                string sql = @"UPDATE Usuario 
+                           SET Nombre = @pNombre, Apellido = @pApellidos, Email = @pEmail, Direccion = @pDireccion, Telephone = @pTelefono
+                           WHERE IdUsuario = @pIdUsuario";
+                SqlCommand cmd = new SqlCommand(sql, con.MiCnx);
+
+                cmd.Parameters.Add(CreateParameter("@pIdUsuario", System.Data.SqlDbType.Int, 0, user.IdUsuario));
+                cmd.Parameters.Add(CreateParameter("@pNombre", System.Data.SqlDbType.NVarChar, 30, user.Nombre));
+                cmd.Parameters.Add(CreateParameter("@pApellidos", System.Data.SqlDbType.NVarChar, 75, user.Apellido));
+                cmd.Parameters.Add(CreateParameter("@pEmail", System.Data.SqlDbType.NVarChar, 50, user.Email));
+                cmd.Parameters.Add(CreateParameter("@pDireccion", System.Data.SqlDbType.NVarChar, 100, user.Direccion));
+                cmd.Parameters.Add(CreateParameter("@pTelefono", System.Data.SqlDbType.Int, 0, user.Telefono));
+                
+
+                cmd.ExecuteNonQuery();
+                
                 Console.Write(ex.Message);
             }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Ha habido un error a la hora de hacer el UPDATE:\n" + ex.Message );
+                //MessageBox.Show("Ha habido un error con el UPDATE:\n" + ex.Message);
+            }
+
+        }
+
+        public SqlParameter CreateParameter(string pNombre, System.Data.SqlDbType tipo, int longitud, object valor)
+        {
+
+            SqlParameter param = new SqlParameter(pNombre, tipo, longitud);
+            param.Value = DbConnect.NullToDB(valor);
+
+            return param;
         }
     }
 }
