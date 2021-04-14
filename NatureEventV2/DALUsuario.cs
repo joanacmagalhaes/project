@@ -48,7 +48,7 @@ namespace NatureEventV2
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Error en Insert: " + ex.Message);
+                Console.Write(ex.Message);
             }
 
             return usuario;
@@ -126,6 +126,7 @@ namespace NatureEventV2
 
                 cmd.ExecuteNonQuery();
                 
+                Console.Write(ex.Message);
             }
             catch (Exception ex)
             {
