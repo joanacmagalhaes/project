@@ -78,6 +78,24 @@ namespace NatureEventV2
         protected global::System.Web.UI.WebControls.Label LblDNI;
 
         /// <summary>
+        /// Control TxtTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtTelefono;
+
+        /// <summary>
+        /// Control LblTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTelefono;
+
+        /// <summary>
         /// Control TxtDireccion.
         /// </summary>
         /// <remarks>
@@ -114,13 +132,13 @@ namespace NatureEventV2
         protected global::System.Web.UI.WebControls.Label LblMensaje;
 
         /// <summary>
-        /// Control Calendar1.
+        /// Control Fecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.Calendar Fecha;
 
         /// <summary>
         /// Control BtnValidar.
