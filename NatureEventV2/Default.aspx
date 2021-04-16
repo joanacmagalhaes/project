@@ -4,11 +4,23 @@
 
 
 
-    <h2>MAP INTEGRATION<asp:DropDownList ID="DropDownList1" runat="server">
-        </asp:DropDownList>
-    </h2>  
+
+    <div class="row">
+        <div class="col-md-12"><h2>Mapa de Eventos</h2></div>
+        <div class="col-md-6">
+            <asp:DropDownList ID="FilterListOrg" runat="server">
+                <asp:ListItem>Selecciona Organización</asp:ListItem>
+            </asp:DropDownList>
+        </div>
+        <div class="col-md-6">
+               <asp:Label>Filter time</asp:Label>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-12">
+                <div id="myMap" style="position:relative;width:100%;height:700px;"></div>
+        </div>
+    </div>        
   
-    <div id="myMap" style="position:relative;width:100%;height:700px;"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqYVkNUW99uD9gb1YRVpQtpicnUFXDOt05i27d7828ZAmXLnEgAlIL8k9NG0UGOc' async defer></script>
