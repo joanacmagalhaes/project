@@ -13,7 +13,7 @@
             </asp:DropDownList>
         </div>
         <div class="col-md-6">
-               <asp:Label>Filter time</asp:Label>
+               <asp:Label ID="FilterDate" runat="server">Filter time</asp:Label>
         </div>
         <div class="clearfix"></div>
         <div class="col-md-12">
@@ -24,8 +24,33 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqYVkNUW99uD9gb1YRVpQtpicnUFXDOt05i27d7828ZAmXLnEgAlIL8k9NG0UGOc' async defer></script>
+
     <script type='text/javascript'>
-            $(document).ready(function () {
+        function unirseEvento(idEvento) {
+            console.log(idEvento);
+            var idUsuario = 1;
+             $.ajax({
+                 type: "POST",
+                 url: "Default.aspx/UnirseEvento",
+                 data: '{ eid:' + idEvento + ', uid:' + idUsuario+' }',  
+                 contentType: "application/json; charset=utf-8",
+                 dataType: "json",
+                 success: onSucessEvent,
+                 failure: function (response) {
+                     alert(response.d);
+                 },
+                 error: function (response) {
+                     alert(response.d);
+                 }
+             });
+        }
+
+        function onSucessEvent(response) {
+            alert(response.d);
+        }
+        $(document).ready(function () {
+
+
                 var map, infobox, pin;
 
                 $(function () {
@@ -58,7 +83,9 @@
 
                     $(eventos).each(function () {
 
-                        var texto = "Fecha inicio:<br/>" + this.FechaInicio + "<br/>Fecha Final:<br/>" + this.FechaFinal + "<br/>Puntos:<br/>" + this.Puntos + "<br/>Descripción:<br/>" + this.Descripcion;
+                        var texto = "<strong>Fecha inicio</strong>:<br/>" + this.FechaInicio + "<br/><strong>Fecha Final:</strong><br/>" + this.FechaFinal + "<br/><strong>Puntos:</strong><br/>" + this.Puntos + "<br/><strong>Descripción:</strong><br/>" + this.Descripcion +
+                            "<br><button type='button' onclick='unirseEvento(" + this.IdEvento+")'>Unirse</button>";
+;
 
                         pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(this.PosX, this.PosY), {
                             title: this.Nombre,
@@ -89,7 +116,8 @@
                     }
                 }
 
-            });
+
+        });
 
 
 

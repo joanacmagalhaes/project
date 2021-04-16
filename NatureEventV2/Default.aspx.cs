@@ -23,5 +23,14 @@ namespace NatureEventV2
             List<Evento> eventos = dALEvento.SelectListEvento();
             return eventos;
         }
+
+        [WebMethod]
+        public static bool UnirseEvento(int eid, int uid)
+        {
+            Console.WriteLine(eid + uid);
+            return true;
+
+        }
+
     }
 }

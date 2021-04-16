@@ -33,10 +33,11 @@ namespace NatureEventV2
                 {
                     emp.IdEmpresa = (int)dr["IdEmpresa"];
                     emp.Nombre = (string)dr["Nombre"];
-                    emp.Direccion = (string)dr["Nombre"];
+                    emp.Direccion = (string)dr["Direccion"];
                     emp.Cif = (string)dr["Cif"];
                     emp.Pwd = (string)dr["Pwd"];
                     emp.Email = (string)dr["Email"];
+                    emp.Telefono = (int)dr["Telephone"];
 
                 }
 
@@ -136,7 +137,8 @@ namespace NatureEventV2
             }
             return empresa.Email;
         }
-        public void InsertarEmpresa(Empresa empresa)
+        
+      public void InsertarEmpresa(Empresa empresa)
         {
 
             string sql = "insert into Empresa (Nombre, CIF, Email, PWD, Direccion, Telephone) values(@pNombre, @pCIF, @pEmail, @pPWD, @pDireccion, @pTelefono)";
