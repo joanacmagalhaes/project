@@ -13,6 +13,7 @@ namespace NatureEventV2
         private string email;
         private string pwd;
         private string direccion;
+        private int telefono;
 
         public Empresa() { 
         
@@ -24,5 +25,6 @@ namespace NatureEventV2
         public string Email { get => email; set => email = value; }
         public string Pwd { get => pwd; set => pwd = value; }
         public string Direccion { get => direccion; set => direccion = value; }
+        public int Telefono { get => telefono; set => telefono = value; }
     }
 }

@@ -14,7 +14,7 @@ namespace NatureEventV2
             DALUsuario dalUser = new DALUsuario();
             Usuario user = new Usuario();
 
-            user = dalUser.SelectUsuarioById((int?)Session["idUser"]);
+            user = dalUser.SelectUsuarioById((int)Session["idUser"]);
 
             LabelNombre.Text = user.Nombre;
             LabelApellidos.Text = user.Apellido;
