@@ -11,7 +11,7 @@
             <div class="col-md-6 col-lg-6">
                 <div class="form-group">
                     <asp:RadioButtonList class="form-check-input" ID="LoginEmpresaUsuario" runat="server" RepeatDirection="Horizontal">
-                        <asp:ListItem>Usuario</asp:ListItem>
+                        <asp:ListItem Selected="True">Usuario</asp:ListItem>
                         <asp:ListItem>Empresa</asp:ListItem>
                     </asp:RadioButtonList>
                     <label for="InputEmail">Email address</label>
