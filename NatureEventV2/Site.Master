@@ -38,38 +38,47 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">NatureEvent</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/About">Acerca de</a></li>
-                        <li><a runat="server" href="~/Contact">Contacto</a></li>
-                        <li><a runat="server" href="~/RegistroUsuario">Registro</a></li>
-                        <li><a runat="server" href="~/PerfilUsuario">Perfil</a></li>
-                        <li><a runat="server" id="loginId" href="~/Login">Login</a></li>
-                        <li><asp:LinkButton ID="logoutId" runat="server" Text="Logout" OnClick="logoutId_Click"></asp:LinkButton></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" runat="server" href="~/">NatureEvent</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                     <a class="nav-link active" runat="server" href="~/">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" runat="server" href="~/Contact">Contacto</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" runat="server" href="~/About">Acerca de</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" runat="server" href="~/RegistroUsuario"><span class="glyphicon glyphicon-user"></span> Registro</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" id="loginId" runat="server" href="~/Login"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+                  </li>
+                  <li class="nav-item">
+                        <a class="nav-link" runat="server" href="~/PerfilUsuario"><span class="glyphicon glyphicon-log-in"></span>PerfilUsuario</a>
+                  </li>
+                  <li class="nav-item">
+                      <asp:LinkButton ID="logoutId" runat="server" Text="Logout" OnClick="logoutId_Click"></asp:LinkButton>
+                   </li>
+                </ul>
+              </div>
+        </nav>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
-            </footer>
         </div>
-
+         <footer class="footer">
+                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
+         </footer>
     </form>
+
 </body>
 </html>
