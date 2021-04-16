@@ -18,7 +18,7 @@ namespace NatureEventV2
             con = new DbConnect();
         }
 
-        public Usuario SelectUsuarioById(int? id)
+        public Usuario SelectUsuarioById(int id)
         {
             Usuario usuario = new Usuario();
 

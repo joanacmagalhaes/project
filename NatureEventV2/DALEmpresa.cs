@@ -33,10 +33,11 @@ namespace NatureEventV2
                 {
                     emp.IdEmpresa = (int)dr["IdEmpresa"];
                     emp.Nombre = (string)dr["Nombre"];
-                    emp.Direccion = (string)dr["Nombre"];
+                    emp.Direccion = (string)dr["Direccion"];
                     emp.Cif = (string)dr["Cif"];
                     emp.Pwd = (string)dr["Pwd"];
                     emp.Email = (string)dr["Email"];
+                    emp.Telefono = (int)dr["Telephone"];
 
                 }
 
@@ -116,6 +117,43 @@ namespace NatureEventV2
             }
             return nombreEmpresa;
 
+        }
+
+        public void UpdateEmpresa(Empresa empresa)
+        {
+            try
+            {
+                string sql = @"UPDATE Empresa 
+                           SET Nombre = @pNombre, Email = @pEmail, Direccion = @pDireccion, Telephone = @pTelefono
+                           WHERE IdEmpresa = @pIdEmpresa";
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+
+                cmd.Parameters.Add(CreateParameter("@pIdEmpresa", System.Data.SqlDbType.Int, 0, empresa.IdEmpresa));
+                cmd.Parameters.Add(CreateParameter("@pNombre", System.Data.SqlDbType.NVarChar, 30, empresa.Nombre));
+                cmd.Parameters.Add(CreateParameter("@pEmail", System.Data.SqlDbType.NVarChar, 50, empresa.Email));
+                cmd.Parameters.Add(CreateParameter("@pDireccion", System.Data.SqlDbType.NVarChar, 100, empresa.Direccion));
+                cmd.Parameters.Add(CreateParameter("@pTelefono", System.Data.SqlDbType.Int, 0, empresa.Telefono));
+
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+                //Console.WriteLine("Ha habido un error a la hora de hacer el UPDATE:\n" + ex.Message );
+                //MessageBox.Show("Ha habido un error con el UPDATE:\n" + ex.Message);
+            }
+
+        }
+
+        public SqlParameter CreateParameter(string pNombre, System.Data.SqlDbType tipo, int longitud, object valor)
+        {
+
+            SqlParameter param = new SqlParameter(pNombre, tipo, longitud);
+            param.Value = DbConnect.NullToDB(valor);
+
+            return param;
         }
     }
 }
