@@ -8,46 +8,38 @@ using System.Web.UI.WebControls;
 
 namespace NatureEventV2
 {
-    public partial class RegistroUsuario : System.Web.UI.Page
+    public partial class RegistroEmpresa : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-      
-        protected void validar_click(object sender, EventArgs e)
+        protected void validar_empresa_click(object sender, EventArgs e)
         {
             try
             {
-                bool contrasenyaValida = validarContrasenya();
-                bool dniValido = validarDNI();
 
-                bool emailValido = validarEmail();
-                bool telefonoValido = validartelefono();
-
-                if ((contrasenyaValida) && (emailValido) && (dniValido) && (telefonoValido))
+                if ((validarContrasenya() == true) && (validarEmail() == true) && (validarDNI() == true) && (validartelefono() == true))
                 {
-                    DALUsuario dusuario = new DALUsuario();
-                    Usuario usuario = new Usuario();
-                    usuario.Nombre = TxtUsuario.Text;
-                    usuario.Apellido = TxtApellido.Text;
-                    usuario.Email = TxtEmail.Text;
-                    usuario.Pwd = TxtContrasenya.Text;
-                    usuario.Dni = TxtDNI.Text;
-                    usuario.FechaNac = this.Fecha.SelectedDate;
-                    usuario.Direccion = TxtDireccion.Text;
-                    usuario.Telefono = (Int32.Parse(TxtTelefono.Text));
+                    
+                    DALEmpresa dempresa = new DALEmpresa();
+                    Empresa empresa = new Empresa();
+                    empresa.Nombre = TxtUsuario.Text;
+                    empresa.Email = TxtEmail.Text;
+                    empresa.Pwd = TxtContrasenya.Text;
+                    empresa.Cif = TxtCIF.Text;
+                    empresa.Direccion = TxtDireccion.Text;
+                    empresa.Telefono = (Int32.Parse(TxtTelefono.Text));
 
-                    dusuario.InsertarUsuarios(usuario);
-                    Server.Transfer("About.aspx");
+                    dempresa.InsertarEmpresa(empresa);
+                    Server.Transfer("Login.aspx");
                 }
             }
             catch (Exception ex)
             {
 
             }
-                
+
         }
         public bool validarContrasenya()
         {
@@ -74,60 +66,60 @@ namespace NatureEventV2
                     }
                     if (((minuscula > 0) && (mayuscula > 0) && (numero > 0) && (especial > 0)) && (TxtContrasenya.Text == TxtContrasenya2.Text))
                     {
+                        LblMensaje.Text = "valido";
                         return true;
                     }
                     else
                     {
-                        TxtContrasenya.BorderColor = System.Drawing.Color.Red;
+                        LblMensaje.Text = "invalido";
                         return false;
                     }
                 }
                 else
                 {
-                    TxtContrasenya.BorderColor = System.Drawing.Color.Red;
+                    LblMensaje.Text = "invalido";
                     return false;
                 }
             }
             catch (Exception ex)
             {
-
-                TxtContrasenya.BorderColor = System.Drawing.Color.Red;
                 return false;
             }
         }
 
-        public bool validarEmail ()
+        public bool validarEmail()
         {
             try
             {
                 String expresion;
-                DALUsuario usuario = new DALUsuario();
+                DALEmpresa usuario = new DALEmpresa();
                 expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
                 if (Regex.IsMatch(TxtEmail.Text, expresion))
                 {
                     if (Regex.Replace(TxtEmail.Text, expresion, String.Empty).Length == 0)
                     {
+                        LblEmail.Text = "valido";
                         if (usuario.ValidarExistenciaEmail(TxtEmail.Text) == null)
                         {
+                            LblEmail.Text = "valido";
                             return true;
                         }
                         else
                         {
-
-                            TxtEmail.BorderColor = System.Drawing.Color.Red;
+                            LblEmail.Text = "invalido";
                             return false;
                         }
                     }
                     else
                     {
-                        TxtEmail.BorderColor = System.Drawing.Color.Red;
+                        LblEmail.Text = "invalido";
                         return false;
                     }
 
                 }
                 else
                 {
-                    TxtEmail.BorderColor = System.Drawing.Color.Red;
+                    LblEmail.Text = "invalido";
                     return false;
                 }
             }
@@ -140,49 +132,51 @@ namespace NatureEventV2
         {
             try
             {
-                var dni = Convert.ToString(TxtDNI.Text);
+                var dni = Convert.ToString(TxtCIF.Text);
 
                 if (String.IsNullOrEmpty(dni))
                 {
-
-                    TxtDNI.BorderColor = System.Drawing.Color.Red;
+                    LblDNI.Text = "invalido";
                     return false;
                 }
 
                 if (!Regex.IsMatch(dni, "/^[0-9]{8}[A-Z]$/i"))
                 {
+                    LblDNI.Text = "valido";
                     return true;
                 }
                 else
                 {
-                    TxtDNI.BorderColor = System.Drawing.Color.Red;
+                    LblDNI.Text = "invalido";
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                return   false;
+                return false;
             }
         }
         public bool validartelefono()
         {
-            try {
+            try
+            {
                 if (TxtTelefono.Text.All(char.IsDigit))
                 {
                     if (TxtTelefono.Text.Length == 9)
                     {
+                        LblTelefono.Text = "valido";
                         return true;
 
                     }
                     else
                     {
-                        TxtTelefono.BorderColor = System.Drawing.Color.Red;
+                        LblTelefono.Text = "invalido";
                         return false;
                     }
                 }
                 else
                 {
-                    TxtTelefono.BorderColor = System.Drawing.Color.Red;
+                    LblTelefono.Text = "invalido";
                     return false;
                 }
 
@@ -195,6 +189,4 @@ namespace NatureEventV2
 
         }
     }
-       
-    
 }
