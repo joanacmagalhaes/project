@@ -98,12 +98,20 @@ namespace NatureEventV2
             
         }
 
-        public int? comprobarLoginUsuario(string email, string password)
+        public int? comprobarLoginUsuario(string email, string password, int index)
         {
             try
             {
                 DbConnect db = new DbConnect();
-                string sql = "SELECT IdUsuario FROM USUARIO WHERE EMAIL = @pEmail AND PWD = @pPassword";
+                string sql = "";
+                if (index == 0)
+                {
+                    sql = "SELECT IdUsuario FROM USUARIO WHERE EMAIL = @pEmail AND PWD = @pPassword";
+                }
+                else
+                {
+                    sql = "SELECT IdEmpresa FROM EMPRESA WHERE EMAIL = @pEmail AND PWD = @pPassword";
+                }
                 SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
                 SqlParameter pEmail = new SqlParameter("@pEmail", System.Data.SqlDbType.NVarChar, 50);
                 SqlParameter pPassword = new SqlParameter("@pPassword", System.Data.SqlDbType.NVarChar, 200);
@@ -113,16 +121,9 @@ namespace NatureEventV2
                 cmd.Parameters.Add(pPassword);
 
                 int? returnValue = (int)cmd.ExecuteScalar();
-                if (returnValue==null)
-                {
-                    //errorLogin.Visible = true;
-                    return null;
-                }
-                else
-                {
-                    
-                    return returnValue;
-                }
+                  
+                return returnValue;
+                
             }
             catch (Exception ex)
             {

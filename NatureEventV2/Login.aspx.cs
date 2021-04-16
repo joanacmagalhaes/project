@@ -29,12 +29,13 @@ namespace NatureEventV2
             {
                 errorPassword.Visible = true;
             }
-            else if (LoginEmpresaUsuario.SelectedIndex == 0)
+            else
             {
                 DALUsuario user = new DALUsuario();
-                Session["idUser"] = user.comprobarLoginUsuario(InputEmail.Text, InputPassword.Text);
+                Session["idUser"] = user.comprobarLoginUsuario(InputEmail.Text, InputPassword.Text, LoginEmpresaUsuario.SelectedIndex);
                 if (Session["idUser"] == null)
                 {
+                    
                     errorLogin.Visible = true;
                 }
                 else

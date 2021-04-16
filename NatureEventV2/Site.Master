@@ -38,6 +38,7 @@
             </Scripts>
         </asp:ScriptManager>
 
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <a class="navbar-brand" runat="server" href="~/">NatureEvent</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,11 +59,14 @@
                       <a class="nav-link" runat="server" href="~/RegistroUsuario"><span class="glyphicon glyphicon-user"></span> Registro</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" runat="server" href="~/Login"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+                      <a class="nav-link" id="loginId" runat="server" href="~/Login"><span class="glyphicon glyphicon-log-in"></span>Login</a>
                   </li>
                   <li class="nav-item">
                         <a class="nav-link" runat="server" href="~/PerfilUsuario"><span class="glyphicon glyphicon-log-in"></span>PerfilUsuario</a>
                   </li>
+                  <li class="nav-item">
+                      <asp:LinkButton ID="logoutId" runat="server" Text="Logout" OnClick="logoutId_Click"></asp:LinkButton>
+                   </li>
                 </ul>
               </div>
         </nav>
