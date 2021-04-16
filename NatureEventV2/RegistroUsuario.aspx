@@ -36,22 +36,30 @@
             <asp:TextBox ID="TxtDNI" runat="server"></asp:TextBox>
             <asp:Label ID="LblDNI" runat="server"></asp:Label>
             
+                <br />
+                <br />
+                <br />
+                Telefono<br />
+                <asp:TextBox ID="TxtTelefono" runat="server"></asp:TextBox>
+                <asp:Label ID="LblTelefono" runat="server" Text="Label"></asp:Label>
+                <br />
+            
             <br />
             <h4>Direccion</h4>
             
             <asp:TextBox ID="TxtDireccion" runat="server"></asp:TextBox>
             <br />
             <h4>Contrasenya</h4>
-            <asp:TextBox ID="TxtContrasenya" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TxtContrasenya" runat="server" SkinID="*"></asp:TextBox>
             <br />
             <h4>Repetir contrasenya</h4>
-            <asp:TextBox ID="TxtContrasenya2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TxtContrasenya2" runat="server" SkinID="*"></asp:TextBox>
             <asp:Label ID="LblMensaje" runat="server"></asp:Label>
             
             <br />
             <h4>Fecha de nacimiento</h4>
             
-            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+            <asp:Calendar ID="Fecha" runat="server"></asp:Calendar>
             
             <br />
             <asp:Button ID="BtnValidar" runat="server" Text="Validar" OnClick="validar_click" />
@@ -62,5 +70,6 @@
                 </div>
         </div>
         </form>
+    </a>
     </asp:Content>
 
