@@ -11,16 +11,16 @@ namespace NatureEventV2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*DALEmpresa dalEmpresa = new DALEmpresa();
+            DALEmpresa dalEmpresa = new DALEmpresa();
             Empresa empresa = new Empresa();
 
-            empresa = dalEmpresa.SelectEmpresaById((int)Session["idEmpresa"]);
+            empresa = dalEmpresa.SelectEmpresaById((int)Session["idUser"]);
 
             LabelNombreEmpresa.Text = empresa.Nombre;
             LabelEmail.Text = empresa.Email;
             LabelTelefono.Text = empresa.Telefono.ToString();
             LabelDireccion.Text = empresa.Direccion;
-            LabelCif.Text = empresa.Cif;*/
+            LabelCif.Text = empresa.Cif;
         }
 
         protected void ButtonEditar_Click(object sender, EventArgs e)
@@ -74,13 +74,13 @@ namespace NatureEventV2
                 LabelDireccion.Text = TextBoxDireccion.Text;
                 LabelDireccion.Visible = true;
 
-                /*empresa.IdEmpresa = Convert.ToInt32(Session["idEmpresa"]);
+                empresa.IdEmpresa = Convert.ToInt32(Session["idUser"]);
                 empresa.Nombre = LabelNombreEmpresa.Text;
                 empresa.Email = LabelEmail.Text;
                 empresa.Direccion = LabelDireccion.Text;
                 empresa.Telefono = Convert.ToInt32(LabelTelefono.Text);
 
-                dalEmpresa.UpdateEmpresa(empresa);*/
+                dalEmpresa.UpdateEmpresa(empresa);
             }
         }
     }
