@@ -40,7 +40,8 @@ namespace NatureEventV2
                 }
                 else
                 {
-                    Server.Transfer("Default.aspx");
+                  Session["user"] = LoginEmpresaUsuario.SelectedIndex;
+                  Server.Transfer("Default.aspx");
                 }
                 
             }
