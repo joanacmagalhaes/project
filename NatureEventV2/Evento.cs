@@ -17,5 +17,10 @@ namespace NatureEventV2
 
         public string NombreEmpresa { get; set; }
 
+
+        public override string ToString()
+        {
+            return Nombre + " - " + Puntos + "\n" + Descripcion + "\n" + Direccion + "\n" + FechaInicio + " - " + FechaFinal;
+        }
     }
 }

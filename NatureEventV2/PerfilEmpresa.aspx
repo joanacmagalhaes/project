@@ -58,7 +58,20 @@
         </div>
         
         <br />
+        
         <asp:Button ID="ButtonEditar" runat="server" Text="Editar" style="margin-left:1117px" OnClick="ButtonEditar_Click" />
+        <br /><br />
+        
+
+        <!--<ul id="listBoxEventosEmpresa" runat="server" class="list-group">
+            <li class="list-group-item">First Item</li>
+            <li class="list-group-item">Second Item</li>
+            <li class="list-group-item">Third Item</li>
+        </ul>-->
+
+        <asp:ListBox ID="listBoxEventosEmpresa1" runat="server" Width="1300px"></asp:ListBox>
 
     </div>
+
+    
 </asp:Content>

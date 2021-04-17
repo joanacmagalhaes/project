@@ -112,5 +112,23 @@ namespace NatureEventV2
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonEditar;
+
+        /// <summary>
+        /// Control listBoxEventosEmpresa.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl listBoxEventosEmpresa;
+
+        /// <summary>
+        /// Control listBoxEventosEmpresa1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox listBoxEventosEmpresa1;
     }
 }
