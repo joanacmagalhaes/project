@@ -103,6 +103,7 @@ namespace NatureEventV2
             try
             {
                 DbConnect db = new DbConnect();
+                
                 string sql = "";
                 if (index == 0)
                 {
@@ -120,7 +121,7 @@ namespace NatureEventV2
                 cmd.Parameters.Add(pEmail);
                 cmd.Parameters.Add(pPassword);
 
-                int? returnValue = (int)cmd.ExecuteScalar();
+                int? returnValue = (int?)cmd.ExecuteScalar();
                   
                 return returnValue;
                 
