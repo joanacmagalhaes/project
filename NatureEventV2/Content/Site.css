@@ -18,8 +18,23 @@ textarea {
     max-width: 280px;
 }
 
+
+/*Title evento box y linkHome color*/
+.infobox-title, .link-logo {
+    color: forestgreen !important;
+}
+/*Logo empresa NAV*/
+.logo{
+    height:25px;
+}
+
+.link-logo {
+    font-weight:600;
+}
+/*Footer css*/
 .footer {
     width: 100%;
+    position: fixed;
     left: 0;
     bottom: 0;
     text-align: center;

@@ -9,9 +9,10 @@ namespace NatureEventV2
 {
     public partial class _Default : Page
     {
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["idUser"] != null) HiddenFieldSessionID.Value = Session["idUser"].ToString();
 
         }
 
@@ -25,12 +26,12 @@ namespace NatureEventV2
         }
 
         [WebMethod]
-        public static bool UnirseEvento(int eid, int uid)
+        public static int UnirseEvento(int eid, int uid)
         {
-            Console.WriteLine(eid + uid);
-            return true;
+            DALEvento dALEvento = new DALEvento();
+            return dALEvento.addUserEvento(eid, uid);
 
         }
-
+        
     }
 }

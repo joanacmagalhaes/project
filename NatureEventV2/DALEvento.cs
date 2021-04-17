@@ -46,9 +46,9 @@ namespace NatureEventV2
                 dr.Close();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine("SelectEventoById(int id): " + ex.Message);
+                return null;
             }
             return evento;
         }
@@ -68,7 +68,7 @@ namespace NatureEventV2
                 cmd.Parameters.Add(pDate);
 
                 SqlDataReader dr = cmd.ExecuteReader();
-
+                
                 while (dr.Read())
                 {
                     evento = new Evento();
@@ -89,11 +89,69 @@ namespace NatureEventV2
                 dr.Close();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine("SelectListEvento(): " + ex.Message);
+                return null;
             }
             return eventos;
+        }
+
+        public bool exitsEventoUsuario(int eid, int uid)
+        {
+            bool res = false;
+            try
+            {
+                string sql = @"SELECT * FROM Asistencia WHERE RIdUsuario=@uid AND RIdEvento=@eid";
+
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+
+                SqlParameter pUid = new SqlParameter("uid", SqlDbType.Int);
+                pUid.Value = uid;
+                cmd.Parameters.Add(pUid);
+                SqlParameter pEid = new SqlParameter("eid", SqlDbType.Int);
+                pEid.Value = eid;
+                cmd.Parameters.Add(pEid);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.HasRows) res = true;
+                dr.Close();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error de conexión");
+            }
+
+            return res;
+        }
+
+        public int addUserEvento(int eid, int uid)
+        {
+            try
+            {
+                if (this.exitsEventoUsuario(eid, uid)) return 2;
+
+                string sql = @"INSERT INTO Asistencia VALUES(@uid,@eid,@bAs)";
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+                SqlParameter pUid = new SqlParameter("uid", SqlDbType.Int);
+                pUid.Value = uid;
+                SqlParameter pEid = new SqlParameter("eid", SqlDbType.Int);
+                pEid.Value = eid;
+                SqlParameter bAs = new SqlParameter("bAs", SqlDbType.Bit);
+                bAs.Value = true;
+                
+                cmd.Parameters.Add(bAs);
+                cmd.Parameters.Add(pUid);
+                cmd.Parameters.Add(pEid);
+
+                cmd.ExecuteReader();
+
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+            return 1;
         }
     }
 }
