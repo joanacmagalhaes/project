@@ -24,10 +24,15 @@ namespace NatureEventV2
             if (InputEmail == null || InputEmail.Text == "")
             {
                 errorEmail.Visible = true;
+                insertEmail.Visible = false;
+                InputEmail.BorderColor = System.Drawing.Color.Red;
+
             }
             else if (InputPassword.Text == null || InputPassword.Text == "")
             {
                 errorPassword.Visible = true;
+                insertPass.Visible = false;
+                InputPassword.BorderColor = System.Drawing.Color.Red;
             }
             else
             {
