@@ -19,7 +19,9 @@ namespace NatureEventV2
             errorEmail.Visible = false;
             errorPassword.Visible = false;
             errorLogin.Visible = false;
-           
+            InputPassword.BorderColor = System.Drawing.Color.Black;
+            InputEmail.BorderColor = System.Drawing.Color.Black;
+
 
             if (InputEmail == null || InputEmail.Text == "")
             {
@@ -42,6 +44,7 @@ namespace NatureEventV2
                 {
                     
                     errorLogin.Visible = true;
+                    errorLogin.ForeColor = System.Drawing.Color.Red;
                 }
                 else
                 {
