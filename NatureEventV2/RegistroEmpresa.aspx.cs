@@ -66,18 +66,17 @@ namespace NatureEventV2
                     }
                     if (((minuscula > 0) && (mayuscula > 0) && (numero > 0) && (especial > 0)) && (TxtContrasenya.Text == TxtContrasenya2.Text))
                     {
-                        LblMensaje.Text = "valido";
                         return true;
                     }
                     else
                     {
-                        LblMensaje.Text = "invalido";
+                        TxtContrasenya.BorderColor = System.Drawing.Color.Red;
                         return false;
                     }
                 }
                 else
                 {
-                    LblMensaje.Text = "invalido";
+                    TxtContrasenya.BorderColor = System.Drawing.Color.Red;
                     return false;
                 }
             }
@@ -98,28 +97,26 @@ namespace NatureEventV2
                 {
                     if (Regex.Replace(TxtEmail.Text, expresion, String.Empty).Length == 0)
                     {
-                        LblEmail.Text = "valido";
                         if (usuario.ValidarExistenciaEmail(TxtEmail.Text) == null)
                         {
-                            LblEmail.Text = "valido";
                             return true;
                         }
                         else
                         {
-                            LblEmail.Text = "invalido";
+                            TxtEmail.BorderColor = System.Drawing.Color.Red;
                             return false;
                         }
                     }
                     else
                     {
-                        LblEmail.Text = "invalido";
+                        TxtEmail.BorderColor = System.Drawing.Color.Red;
                         return false;
                     }
 
                 }
                 else
                 {
-                    LblEmail.Text = "invalido";
+                    TxtEmail.BorderColor = System.Drawing.Color.Red;
                     return false;
                 }
             }
@@ -136,18 +133,17 @@ namespace NatureEventV2
 
                 if (String.IsNullOrEmpty(dni))
                 {
-                    LblDNI.Text = "invalido";
+                    TxtCIF.BorderColor = System.Drawing.Color.Red;
                     return false;
                 }
 
                 if (!Regex.IsMatch(dni, "/^[0-9]{8}[A-Z]$/i"))
                 {
-                    LblDNI.Text = "valido";
                     return true;
                 }
                 else
                 {
-                    LblDNI.Text = "invalido";
+                    TxtCIF.BorderColor = System.Drawing.Color.Red;
                     return false;
                 }
             }
@@ -164,19 +160,18 @@ namespace NatureEventV2
                 {
                     if (TxtTelefono.Text.Length == 9)
                     {
-                        LblTelefono.Text = "valido";
                         return true;
 
                     }
                     else
                     {
-                        LblTelefono.Text = "invalido";
+                        TxtTelefono.BorderColor = System.Drawing.Color.Red;
                         return false;
                     }
                 }
                 else
                 {
-                    LblTelefono.Text = "invalido";
+                    TxtTelefono.BorderColor = System.Drawing.Color.Red;
                     return false;
                 }
 
