@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -52,6 +52,49 @@ namespace NatureEventV2
             }
             return evento;
         }
+      
+        public List<Evento> SelectListEventosByIdEmpresa(int idEmpresa)
+        {
+            List<Evento> eventos = new List<Evento>();
+            DALEmpresa dALEmpresa = new DALEmpresa();
+            Evento evento;
+            try
+            {
+                string sql = @"SELECT * FROM Evento WHERE RIdEmpresa = @pRIdEmpresa";
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+                SqlParameter pRIdEmpresa = new SqlParameter("pRIdEmpresa", SqlDbType.Int);
+                pRIdEmpresa.Value = idEmpresa;
+                cmd.Parameters.Add(pRIdEmpresa);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    evento = new Evento();
+                    evento.IdEvento = (int)dr["IdEvento"];
+                    evento.Nombre = (string)dr["Nombre"];
+                    evento.Direccion = (string)dr["Direccion"];
+                    evento.Descripcion = (string)dr["Descripcion"];
+                    evento.RIdEmpresa = (int)dr["RIdEmpresa"];
+                    evento.Puntos = (int)dr["Puntos"];
+                    evento.PosX = Double.Parse(dr["PosX"].ToString());
+                    evento.PosY = Double.Parse(dr["PosY"].ToString());
+                    evento.FechaInicio = dr["FechaInicio"].ToString().Replace('{', ' ');
+                    evento.FechaFinal = dr["FechaFinal"].ToString().Replace('{', ' ');
+                    evento.NombreEmpresa = dALEmpresa.SelectNombreEmpresaById(evento.IdEvento);
+                    eventos.Add(evento);
+                }
+
+                dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SelectListEvento(): " + ex.Message);
+            }
+            return eventos;
+        }
+
 
         public List<Evento> SelectListEvento()
         {
