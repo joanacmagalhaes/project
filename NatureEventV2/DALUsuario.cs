@@ -126,7 +126,7 @@ namespace NatureEventV2
                 return returnValue;
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }

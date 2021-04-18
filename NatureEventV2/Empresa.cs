@@ -26,5 +26,10 @@ namespace NatureEventV2
         public string Pwd { get => pwd; set => pwd = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public int Telefono { get => telefono; set => telefono = value; }
+
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
     }
 }

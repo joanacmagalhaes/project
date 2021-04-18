@@ -40,21 +40,13 @@
 
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            <a class="navbar-brand" runat="server" href="~/">NatureEvent</a>
+            
+            <a class="navbar-brand link-logo" runat="server" href="~/"><img class="logo" src="Content/img/logo.svg" /><span style="margin-left:5px;">NatureEvent</span></a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                     <a class="nav-link active" runat="server" href="~/">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" runat="server" href="~/Contact">Contacto</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" runat="server" href="~/About">Acerca de</a>
-                  </li>
                   <li class="nav-item">
                       <a class="nav-link" runat="server" href="~/RegistroUsuario"><span class="glyphicon glyphicon-user"></span> Registro</a>
                   </li>
@@ -68,17 +60,26 @@
                         <a class="nav-link" ID="perfilEmpresa" runat="server" href="~/PerfilEmpresa"><span class="glyphicon glyphicon-log-in"></span>Perfil</a>
                   </li>
                   <li class="nav-item">
-                      <asp:LinkButton ID="logoutId" runat="server" Text="Logout" OnClick="logoutId_Click"></asp:LinkButton>
+                      <asp:LinkButton ID="logoutId" CssClass="nav-link" runat="server" Text="Logout" OnClick="logoutId_Click"></asp:LinkButton>
                    </li>
                 </ul>
               </div>
         </nav>
         <div class="container body-content">
+            <div class="mb-3"></div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
         </div>
          <footer class="footer">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a class="nav-link" runat="server" href="~/About">Sobre nosotros</a>
+                  </li>
+                  <li class="list-inline-item">
+                     <a class="nav-link" runat="server" href="~/Contact">Contacto</a>
+                  </li>
+                </ul>
                 <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
          </footer>
     </form>

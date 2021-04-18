@@ -46,7 +46,7 @@ namespace NatureEventV2
             }
             catch (Exception ex)
             {
-                Console.WriteLine("SelectEventoById(int id): " + ex.Message);
+                throw new Exception("Error SelectEmpresaById: " + ex);
             }
             return emp;
         }
@@ -57,9 +57,44 @@ namespace NatureEventV2
 
             Empresa emp;
             try
+            {   
+                string sql = @"SELECT * FROM Empresa";
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    emp = new Empresa();
+                    emp.IdEmpresa = (int)dr["IdEmpresa"];
+                    emp.Nombre = (string)dr["Nombre"];
+                    emp.Direccion = (string)dr["Nombre"];
+                    emp.Cif = (string)dr["Cif"];
+                    emp.Pwd = (string)dr["Pwd"];
+                    emp.Email = (string)dr["Email"];
+
+                    empresas.Add(emp);
+                }
+
+                dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error SelectNombreEmpresaById: " + ex);
+            }
+            return empresas;
+        }
+
+        /*public List<Empresa> SelectListEmpWithActiveEvents()
+        {
+            List<Empresa> empresas = new List<Empresa>();
+
+            Empresa emp;
+            try
             {
                 DateTime today = DateTime.Now;
-                string sql = @"SELECT * FROM Empresa";
+                string sql = @"SELECT * FROM Empresa WHERE ";
                 SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
                 SqlParameter pDate = new SqlParameter("today", SqlDbType.DateTime);
                 pDate.Value = today;
@@ -85,10 +120,12 @@ namespace NatureEventV2
             }
             catch (Exception ex)
             {
-                Console.WriteLine("SelectListEvento(): " + ex.Message);
+                throw new Exception("Error SelectNombreEmpresaById: " + ex);
             }
             return empresas;
         }
+
+        */
 
         public string SelectNombreEmpresaById(int id)
         {
@@ -113,28 +150,36 @@ namespace NatureEventV2
             }
             catch (Exception ex)
             {
-                Console.WriteLine("SelectEventoById(int id): " + ex.Message);
+                throw new Exception("Error SelectNombreEmpresaById: " + ex);
             }
             return nombreEmpresa;
 
         }
         public string ValidarExistenciaEmail(string email)
         {
-
-            string sql = @"SELECT * FROM Empresa WHERE Email = @pEmail";
-            SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
-            SqlParameter pEmail = new SqlParameter("@pEmail", email);
-            cmd.Parameters.Add(pEmail);
-
-
-            SqlDataReader dr = cmd.ExecuteReader();
             Empresa empresa = new Empresa();
-            while (dr.Read())
-            {
 
-                empresa.Email = (string)dr["Email"];
+            try
+            {
+                string sql = @"SELECT * FROM Empresa WHERE Email = @pEmail";
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+                SqlParameter pEmail = new SqlParameter("@pEmail", email);
+                cmd.Parameters.Add(pEmail);
+
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+
+                    empresa.Email = (string)dr["Email"];
+
+                }
+            }catch(Exception ex)
+            {
+                throw new Exception("Error ValidarExistenciaEmail: " + ex);
 
             }
+
             return empresa.Email;
         }
         
@@ -188,7 +233,7 @@ namespace NatureEventV2
             }
             catch (Exception ex)
             {
-                return null;
+                throw new Exception("Error comprobarLoginEmpresa: " + ex);
             }
         }
 
@@ -211,9 +256,7 @@ namespace NatureEventV2
             }
             catch (Exception ex)
             {
-                Console.Write(ex.Message);
-                //Console.WriteLine("Ha habido un error a la hora de hacer el UPDATE:\n" + ex.Message );
-                //MessageBox.Show("Ha habido un error con el UPDATE:\n" + ex.Message);
+                throw new Exception("Error UpdateEmpresa: " + ex);
             }
 
         }
