@@ -47,15 +47,6 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                     <a class="nav-link" runat="server" href="~/">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" runat="server" href="~/Contact">Contacto</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" runat="server" href="~/About">Acerca de</a>
-                  </li>
                   <li class="nav-item">
                       <a class="nav-link" runat="server" href="~/RegistroUsuario"><span class="glyphicon glyphicon-user"></span> Registro</a>
                   </li>
@@ -75,6 +66,7 @@
               </div>
         </nav>
         <div class="container body-content">
+            <div class="mb-3"></div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />

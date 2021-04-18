@@ -13,7 +13,7 @@
         <div class="col-md-6">
                <asp:Label ID="FilterDate" runat="server">Filter time</asp:Label>
         </div>
-        <div class="clearfix"></div>
+        <div class="col-md-12 mb-2"></div>
         <div class="col-md-12">
                 <div id="myMap" style="position:relative;width:100%;height:700px;"></div>
         </div>
