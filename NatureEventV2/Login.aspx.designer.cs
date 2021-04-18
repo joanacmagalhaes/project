@@ -33,13 +33,22 @@ namespace NatureEventV2
         protected global::System.Web.UI.WebControls.TextBox InputEmail;
 
         /// <summary>
+        /// Control insertEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl insertEmail;
+
+        /// <summary>
         /// Control errorEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorEmail;
 
         /// <summary>
         /// Control InputPassword.
@@ -51,13 +60,22 @@ namespace NatureEventV2
         protected global::System.Web.UI.WebControls.TextBox InputPassword;
 
         /// <summary>
+        /// Control insertPass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl insertPass;
+
+        /// <summary>
         /// Control errorPassword.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorPassword;
 
         /// <summary>
         /// Control errorLogin.
@@ -66,7 +84,7 @@ namespace NatureEventV2
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errorLogin;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorLogin;
 
         /// <summary>
         /// Control Button1.
