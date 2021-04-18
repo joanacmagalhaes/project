@@ -2,6 +2,9 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url(img/background-body.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Wrapping element */
@@ -41,6 +44,19 @@ textarea {
     background-color: lightsteelblue;
 }
 
+/*DataPicker*/
+#ui-datepicker-div{
+    background-color:lightsteelblue;
+    width:185px;
+    border-radius:5px;
+}
+.ui-datepicker-calendar, .ui-datepicker-header {
+    margin: 10px;
+}
+.ui-datepicker-next, .ui-datepicker-year {
+    float: right;
+}
+/*Fin DataPicker*/
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {

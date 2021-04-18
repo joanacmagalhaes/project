@@ -46,9 +46,9 @@ namespace NatureEventV2
                 dr.Close();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return null;
+                throw new Exception("Error SelectEventoById:" + ex.Message);
             }
             return evento;
         }
@@ -89,12 +89,65 @@ namespace NatureEventV2
                 dr.Close();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return null;
+                throw new Exception("Error SelectListEvento:" + ex.Message);
             }
             return eventos;
         }
+
+        public List<Evento> SelectListEventoByCompanyAndStartDate(int idEmpresa, string fechaStart)
+        {
+            List<Evento> eventos = new List<Evento>();
+            DALEmpresa dALEmpresa = new DALEmpresa();
+            Evento evento;
+            try
+            {
+                string sql = @"SELECT * FROM Evento WHERE FechaInicio>@pFecha";
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+                SqlParameter pDate = new SqlParameter("pFecha", SqlDbType.DateTime);
+                if (fechaStart == "") fechaStart = DateTime.Now.ToString();
+                pDate.Value = fechaStart;
+                cmd.Parameters.Add(pDate);
+                if (idEmpresa != 0)
+                {
+                    sql += " AND RIdEmpresa=@pIdempresa";
+                    cmd.CommandText = sql;
+                    SqlParameter pId = new SqlParameter("pIdempresa", SqlDbType.Int);
+                    pId.Value = idEmpresa;
+                    cmd.Parameters.Add(pId);
+
+                }
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    evento = new Evento();
+                    evento.IdEvento = (int)dr["IdEvento"];
+                    evento.Nombre = (string)dr["Nombre"];
+                    evento.Direccion = (string)dr["Direccion"];
+                    evento.Descripcion = (string)dr["Descripcion"];
+                    evento.RIdEmpresa = (int)dr["RIdEmpresa"];
+                    evento.Puntos = (int)dr["Puntos"];
+                    evento.PosX = Double.Parse(dr["PosX"].ToString());
+                    evento.PosY = Double.Parse(dr["PosY"].ToString());
+                    evento.FechaInicio = dr["FechaInicio"].ToString().Replace('{', ' ');
+                    evento.FechaFinal = dr["FechaFinal"].ToString().Replace('{', ' ');
+                    evento.NombreEmpresa = dALEmpresa.SelectNombreEmpresaById(evento.IdEvento);
+                    eventos.Add(evento);
+                }
+
+                dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error SelectListEventoByCompanyAndStartDate:" + ex.Message);
+            }
+            return eventos;
+        }
+
 
         public bool exitsEventoUsuario(int eid, int uid)
         {
@@ -117,9 +170,9 @@ namespace NatureEventV2
                 if (dr.HasRows) res = true;
                 dr.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception("Error de conexión");
+                throw new Exception("Error exitsEventoUsuario:" + ex.Message);
             }
 
             return res;
