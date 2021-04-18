@@ -90,7 +90,7 @@ namespace NatureEventV2
             }
             catch (Exception ex)
             {
-                Console.WriteLine("SelectListEvento(): " + ex.Message);
+                throw new Exception("Error SelectListEventosByIdEmpresa:" + ex.Message);
             }
             return eventos;
         }
