@@ -25,9 +25,9 @@ namespace NatureEventV2
             LabelDireccion.Text = empresa.Direccion;
             LabelCif.Text = empresa.Cif;
 
-            foreach (Evento evento in eventos) {
-                listBoxEventosEmpresa1.Items.Add(evento.ToString());
-            }
+            ////foreach (Evento evento in eventos) {
+            ////    listBoxEventosEmpresa1.Items.Add(evento.ToString());
+            //}
         }
 
         protected void ButtonEditar_Click(object sender, EventArgs e)
@@ -80,6 +80,8 @@ namespace NatureEventV2
 
                 LabelDireccion.Text = TextBoxDireccion.Text;
                 LabelDireccion.Visible = true;
+
+                LabelCif.Visible = true;
 
                 empresa.IdEmpresa = Convert.ToInt32(Session["idUser"]);
                 empresa.Nombre = LabelNombreEmpresa.Text;

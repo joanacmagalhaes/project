@@ -242,13 +242,15 @@ namespace NatureEventV2
             try
             {
                 string sql = @"UPDATE Empresa
-                           SET Nombre = @pNombre,  Email = @pEmail, Direccion = @pDireccion
+                           SET Nombre = @pNombre,  Email = @pEmail, Direccion = @pDireccion, Telephone = @pTelephone
                            WHERE IdEmpresa = @pIdEmpresa";
                 SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
 
                 cmd.Parameters.Add(CreateParameter("@pNombre", System.Data.SqlDbType.NVarChar, 30, empresa.Nombre));
                 cmd.Parameters.Add(CreateParameter("@pEmail", System.Data.SqlDbType.NVarChar, 50, empresa.Email));
                 cmd.Parameters.Add(CreateParameter("@pDireccion", System.Data.SqlDbType.NVarChar, 100, empresa.Direccion));
+                cmd.Parameters.Add(CreateParameter("@pIdEmpresa", System.Data.SqlDbType.Int, 0, empresa.IdEmpresa));
+                cmd.Parameters.Add(CreateParameter("@pTelephone", System.Data.SqlDbType.Int, 0, empresa.Telefono));
 
 
                 cmd.ExecuteNonQuery();

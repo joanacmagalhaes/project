@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="form-label-group">
-                  <asp:TextBox class="form-control" ID="InputPassword" aria-describedby="emailHelp" runat="server"></asp:TextBox>
+                  <asp:TextBox class="form-control" ID="InputPassword" aria-describedby="emailHelp" runat="server" TextMode="Password"></asp:TextBox>
                   <label id="insertPass" runat="server" for="InputPassword">Password</label>
                   <label id="errorPassword" runat="server" for="InputPassword" Visible="False">Insert a Valid Password</label>
                 </div>
