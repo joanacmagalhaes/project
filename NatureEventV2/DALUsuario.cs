@@ -161,7 +161,7 @@ namespace NatureEventV2
 
         }
 
-        public SqlParameter CreateParameter(string pNombre, System.Data.SqlDbType tipo, int longitud, object valor)
+        public static SqlParameter CreateParameter(string pNombre, System.Data.SqlDbType tipo, int longitud, object valor)
         {
 
             SqlParameter param = new SqlParameter(pNombre, tipo, longitud);

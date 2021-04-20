@@ -249,5 +249,33 @@ namespace NatureEventV2
             }
             return 1;
         }
+
+        public void InsertarEvento(Evento evento)
+        {
+            try
+            {
+                string sql = @"INSERT INTO Evento (Nombre,Direccion, RIdEmpresa, Puntos, Descripcion, FechaInicio, FechaFinal, PosX, PosY) 
+                                VALUES(@pNombre, @pDireccion, @pRIdEmpresa, @pPuntos, @pDescripcion, @pFechaInicio, @pFechaFinal, @pPosX, @pPosY)";
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+             
+                cmd.Parameters.Add(DALUsuario.CreateParameter("@pNombre", System.Data.SqlDbType.NVarChar, 30, evento.Nombre));
+                cmd.Parameters.Add(DALUsuario.CreateParameter("@pDireccion", System.Data.SqlDbType.NVarChar, 100, evento.Direccion));
+                cmd.Parameters.Add(DALUsuario.CreateParameter("@pRIdEmpresa", System.Data.SqlDbType.Int, 0, evento.RIdEmpresa));
+                cmd.Parameters.Add(DALUsuario.CreateParameter("@pPuntos", System.Data.SqlDbType.Int, 0, evento.Puntos));
+                cmd.Parameters.Add(DALUsuario.CreateParameter("@pDescripcion", System.Data.SqlDbType.NVarChar, 1000, evento.Descripcion));
+                cmd.Parameters.Add(DALUsuario.CreateParameter("@pFechaInicio", System.Data.SqlDbType.DateTime, 0, evento.FechaInicio));
+                cmd.Parameters.Add(DALUsuario.CreateParameter("@pFechaFinal", System.Data.SqlDbType.DateTime, 0, evento.FechaFinal));
+                cmd.Parameters.Add(DALUsuario.CreateParameter("@pPosX", System.Data.SqlDbType.Float, 40, evento.PosX));
+                cmd.Parameters.Add(DALUsuario.CreateParameter("@pPosY", System.Data.SqlDbType.Float, 40, evento.PosY));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) {
+
+                Console.WriteLine("Ha habido un error a la hora de hacer un INSERT.");
+            }
+            
+
+        }
     }
 }
