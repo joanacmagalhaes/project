@@ -154,6 +154,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Content\img\volver.jpg" />
     <Content Include="Default.aspx" />
+    <Content Include="PaginaEvento.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -236,6 +237,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empresa.cs" />
+    <Compile Include="PaginaEvento.aspx.cs">
+      <DependentUpon>PaginaEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaginaEvento.aspx.designer.cs">
+      <DependentUpon>PaginaEvento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Evento.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

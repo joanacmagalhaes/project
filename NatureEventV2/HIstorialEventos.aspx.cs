@@ -22,7 +22,13 @@ namespace NatureEventV2
                 eventos = dalEvento.SelectListEventosByIdEmpresa((int)Session["idUser"]);
                 foreach (Evento evento in eventos)
                 {
-                    listBoxEventosEmpresa1.Items.Add(evento.ToString());
+                    //Application[evento.Nombre] = evento.IdEvento;
+                    //ContentArea.Controls.Add(new LiteralControl("<div>"));
+
+                    //var p = new HtmlGenericControl("p") { InnerText = evento.Nombre.ToString() + " " + evento.FechaInicio };
+                    //ContentArea.Controls.Add(p);
+                    //ContentArea.Controls.Add(new LiteralControl("<a href='PaginaEvento.aspx?idEvento=" + evento.IdEvento + " runat='server' id='" + evento.IdEvento + "'>Click par la pagina principal</a></div>"));
+
                 }
             }
 
@@ -39,7 +45,7 @@ namespace NatureEventV2
                      
                        var p = new HtmlGenericControl("p") { InnerText = evento.Nombre.ToString() + " " + evento.FechaInicio };
                        ContentArea.Controls.Add(p);
-                       ContentArea.Controls.Add(new LiteralControl("<a href='evento.aspx?idEvento="+evento.IdEvento+" runat='server' id='"+evento.IdEvento+"'>Click par la pagina principal</a></div>"));
+                       ContentArea.Controls.Add(new LiteralControl("<a href='PaginaEvento.aspx?idEvento="+evento.IdEvento+ "' runat='server' id='" + evento.IdEvento+"'>Click par la pagina principal</a></div>"));
                     
 
                     // listBoxEventosEmpresa1.Items.Add(evento.ToString());

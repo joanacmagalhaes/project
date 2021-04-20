@@ -66,7 +66,7 @@ namespace NatureEventV2
                 SqlParameter pRIdEmpresa = new SqlParameter("pRIdEmpresa", SqlDbType.Int);
                 pRIdEmpresa.Value = idEmpresa;
                 cmd.Parameters.Add(pRIdEmpresa);
-
+             
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
