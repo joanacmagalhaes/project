@@ -15,7 +15,7 @@ namespace NatureEventV2
 
         }
 
-      
+
         protected void validar_click(object sender, EventArgs e)
         {
             try
@@ -35,19 +35,19 @@ namespace NatureEventV2
                     usuario.Email = TxtEmail.Text;
                     usuario.Pwd = TxtContrasenya.Text;
                     usuario.Dni = TxtDNI.Text;
-                    usuario.FechaNac = this.Fecha.SelectedDate;
+                    usuario.FechaNac = Convert.ToDateTime(TxtFecha.Text);
                     usuario.Direccion = TxtDireccion.Text;
                     usuario.Telefono = (Int32.Parse(TxtTelefono.Text));
 
                     dusuario.InsertarUsuarios(usuario);
-                    Server.Transfer("About.aspx");
+                    Server.Transfer("Login.aspx");
                 }
             }
             catch (Exception ex)
             {
-
+                throw new Exception("Error validar_click:" + ex.Message);
             }
-                
+
         }
         public bool validarContrasenya()
         {
@@ -88,15 +88,14 @@ namespace NatureEventV2
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
                 TxtContrasenya.BorderColor = System.Drawing.Color.Red;
                 return false;
             }
         }
 
-        public bool validarEmail ()
+        public bool validarEmail()
         {
             try
             {
@@ -131,7 +130,7 @@ namespace NatureEventV2
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -159,14 +158,15 @@ namespace NatureEventV2
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return   false;
+                return false;
             }
         }
         public bool validartelefono()
         {
-            try {
+            try
+            {
                 if (TxtTelefono.Text.All(char.IsDigit))
                 {
                     if (TxtTelefono.Text.Length == 9)
@@ -188,13 +188,13 @@ namespace NatureEventV2
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
 
         }
     }
-       
-    
+
+
 }

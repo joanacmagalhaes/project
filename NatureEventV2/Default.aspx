@@ -15,12 +15,12 @@
         </div>
         <div class="col-md-5">
             <label><b>Fecha de inicio:</b></label>
-            <asp:TextBox ID="FilterDate" runat="server" ReadOnly="true"></asp:TextBox>
+            <asp:TextBox ID="FilterDate" runat="server"></asp:TextBox>
         </div>
         <div class="col-md-2">
             <button type="button" id="BtnFiltro" class="btn btn-success" onclick="mapaFilter()">Aplicar Filtro</button>
         </div>
-        <div class="col-md-12 mb-2"></div>
+        <div class="col-md-12 mb-2"><input id='textBox' type="text" style="width:250px;"/></div>
         <div class="col-md-12">
             <div id="myMap" style="position: relative; width: 100%; height: 700px;"></div>
         </div>
@@ -73,9 +73,20 @@
 
         function onSucessFilter(response) {
 
+            document.getElementById("mensajeServidor").innerHTML = "<div class='alert alert-success alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Resultados: </strong> Se han encontrado " + response.d.length + " eventos.</div>";
             onSucess(response);
 
         }
+
+        function displayLatLong(e) {
+            if (e.targetType == "map") {
+                var point = new Microsoft.Maps.Point(e.getX(), e.getY());
+                var loc = e.target.tryPixelToLocation(point);
+                document.getElementById("textBox").value = loc.latitude + ", " + loc.longitude;
+
+            }
+        }
+
 
         function onSucessEvent(response) {
             if (response.d == 1) {
@@ -97,7 +108,7 @@
                 changeYear: true,
                 minDate: 0
 
-            });
+        });
 
 
         var map, infobox, pin;
@@ -155,6 +166,7 @@
                 };
 
                 Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
+                Microsoft.Maps.Events.addHandler(map, 'click', displayLatLong);
                 map.entities.push(pin);
             });
         }
