@@ -4,9 +4,9 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container" runat="server" style="width:100%;">
+            <h3>Eventos</h3>
+            <asp:Panel ID="ContentArea" runat="server">
 
-                
-    </div>
-            <asp:Panel ID="ContentArea" runat="server"></asp:Panel>
-
+            </asp:Panel>
+     </div>
 </asp:Content>
