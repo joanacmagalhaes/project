@@ -48,7 +48,7 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item">
-                      <a class="nav-link" runat="server" href="~/RegistroUsuario"><span class="glyphicon glyphicon-user"></span> Registro</a>
+                      <a class="nav-link" id="registroUsuario" runat="server" href="~/RegistroUsuario"><span class="glyphicon glyphicon-user"></span> Registro</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" id="loginId" runat="server" href="~/Login"><span class="glyphicon glyphicon-log-in"></span>Login</a>
@@ -80,7 +80,7 @@
                      <a class="nav-link" runat="server" href="~/Contact">Contacto</a>
                   </li>
                 </ul>
-                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Fundacion Esplai</p>
          </footer>
     </form>
 

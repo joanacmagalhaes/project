@@ -3,9 +3,9 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url(img/background-body.jpg);
+/*    background-image: url(img/background-body.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 /* Wrapping element */
@@ -13,6 +13,7 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -181,3 +182,4 @@ textarea {
         color: #777;
     }
 }
+

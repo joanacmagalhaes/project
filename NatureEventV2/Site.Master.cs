@@ -18,6 +18,7 @@ namespace NatureEventV2
             {
                 logoutId.Visible = true;
                 loginId.Visible = false;
+                registroUsuario.Visible = false;
             }
             switch (Session["user"])
             {
