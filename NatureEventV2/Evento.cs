@@ -20,7 +20,8 @@ namespace NatureEventV2
 
         public override string ToString()
         {
-            return Nombre + " - " + Puntos + "\n" + Descripcion + "\n" + Direccion + "\n" + FechaInicio + " - " + FechaFinal;
+ 
+            return Nombre + " - " + Puntos + " " +  Descripcion + " " + Direccion + " " + FechaInicio + " - " + FechaFinal;
         }
     }
 }
