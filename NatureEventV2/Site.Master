@@ -65,6 +65,9 @@
                   <li class="nav-item">
                       <asp:LinkButton ID="logoutId" CssClass="nav-link" runat="server" Text="Logout" OnClick="logoutId_Click"></asp:LinkButton>
                    </li>
+                    <li class="nav-item">
+                     <a class="nav-link" ID="historialEventos" runat="server" href="~/historialEventos"><span class="glyphicon glyphicon-log-in"></span>Historial</a>
+                   </li>
                 </ul>
               </div>
         </nav>

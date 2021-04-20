@@ -22,11 +22,13 @@ namespace NatureEventV2
             {
                 bool contrasenyaValida = validarContrasenya();
                 bool dniValido = validarDNI();
-
                 bool emailValido = validarEmail();
                 bool telefonoValido = validartelefono();
+                bool validarNombre = validarCampos(TxtUsuario);
+                bool validarApellido = validarCampos(TxtApellido);
+                bool validarDireccion = validarCampos(TxtDireccion);
 
-                if ((contrasenyaValida) && (emailValido) && (dniValido) && (telefonoValido))
+                if ((contrasenyaValida) && (emailValido) && (dniValido) && (telefonoValido)&&(validarNombre)&&(validarApellido)&&(this.Fecha.SelectedDate!=null))
                 {
                     DALUsuario dusuario = new DALUsuario();
                     Usuario usuario = new Usuario();
@@ -193,6 +195,16 @@ namespace NatureEventV2
                 return false;
             }
 
+        }
+        public bool validarCampos (TextBox TxtUsuario)
+        {
+            if ((TxtUsuario.Text==""))
+            {
+                TxtUsuario.BorderColor = System.Drawing.Color.Red;
+                return false;
+            }
+
+            else return true;
         }
     }
 
