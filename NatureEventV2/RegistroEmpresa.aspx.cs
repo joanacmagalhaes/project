@@ -18,8 +18,14 @@ namespace NatureEventV2
         {
             try
             {
+                bool contrasenyaValida = validarContrasenya();
+                bool dniValido = validarDNI();
+                bool emailValido = validarEmail();
+                bool telefonoValido = validartelefono();
+                bool validarNombre = validarCampos(TxtUsuario);
+                bool validarDireccion = validarCampos(TxtDireccion);
 
-                if ((validarContrasenya() == true) && (validarEmail() == true) && (validarDNI() == true) && (validartelefono() == true))
+                if ((contrasenyaValida) && (emailValido) && (dniValido) && (telefonoValido)&&(validarNombre)&&(validarDireccion))
                 {
                     
                     DALEmpresa dempresa = new DALEmpresa();
@@ -182,6 +188,16 @@ namespace NatureEventV2
                 return false;
             }
 
+        }
+        public bool validarCampos(TextBox TxtUsuario)
+        {
+            if ((TxtUsuario.Text == ""))
+            {
+                TxtUsuario.BorderColor = System.Drawing.Color.Red;
+                return false;
+            }
+
+            else return true;
         }
     }
 }

@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="form-label-group">
-                        <asp:Calendar ID="Fecha" runat="server"></asp:Calendar>
+                        <asp:TextBox ID="TxtFecha" runat="server" CssClass="form-control"></asp:TextBox>
                         <label id="Label6" runat="server">Fecha de nacimiento</label>
                     </div>
                 </div>
@@ -100,6 +100,16 @@
     </div>
   </div>
 </div>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $('#MainContent_TxtFecha').datepicker(
+            {
+                dateFormat: 'dd/mm/yy',
+                yearRange: "-120:-18",
+                changeMonth: true,
+                changeYear: true
+            });
+    </script>
     </asp:Content>
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.UI.HtmlControls;
 
 namespace NatureEventV2
 {
@@ -65,7 +66,7 @@ namespace NatureEventV2
                 SqlParameter pRIdEmpresa = new SqlParameter("pRIdEmpresa", SqlDbType.Int);
                 pRIdEmpresa.Value = idEmpresa;
                 cmd.Parameters.Add(pRIdEmpresa);
-
+             
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
@@ -277,5 +278,50 @@ namespace NatureEventV2
             
 
         }
+
+      public List<Evento> SelectListEventosByIdUsuario(int idUsuario)
+        {
+            List<Evento> eventos = new List<Evento>();
+            Evento evento = new Evento();
+
+            try
+            {
+                string sql = @"select * from asistencia inner join evento on RidEvento=idEvento where ridUsuario=@pId;
+";
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+                SqlParameter pId = new SqlParameter("pId", SqlDbType.Int);
+                pId.Value = idUsuario;
+                cmd.Parameters.Add(pId);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    evento.IdEvento = (int)dr["IdEvento"];
+                    evento.Nombre = (string)dr["Nombre"];
+                    evento.Direccion = (string)dr["Direccion"];
+                    evento.Descripcion = (string)dr["Descripcion"];
+                    evento.RIdEmpresa = (int)dr["RIdEmpresa"];
+                    evento.Puntos = (int)dr["Puntos"];
+                    evento.PosX = Double.Parse(dr["PosX"].ToString());
+                    evento.PosY = Double.Parse(dr["PosY"].ToString());
+                    evento.FechaInicio = dr["FechaInicio"].ToString().Replace('{', ' ');
+                    evento.FechaFinal = dr["FechaFinal"].ToString().Replace('{', ' ');
+                    eventos.Add(evento);
+
+                    
+                }
+
+                dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error SelectEventoById:" + ex.Message);
+            }
+            return eventos;
+
+        }
+
     }
 }

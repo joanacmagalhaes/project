@@ -13,7 +13,8 @@ namespace NatureEventV2
         {
             
             logoutId.Visible = false;
-            
+            linkCrearEvento.Visible = false;
+
             if (Session["IdUser"]!= null)
             {
                 logoutId.Visible = true;
@@ -25,13 +26,16 @@ namespace NatureEventV2
                 case 0:
                     perfilUsuario.Visible = true;
                     perfilEmpresa.Visible = false;
+                    linkCrearEvento.Visible = false;
                     break;
                 case 1:
                     perfilUsuario.Visible = false;
                     perfilEmpresa.Visible = true;
+                    linkCrearEvento.Visible = true;
                     break;
                 default:
                     perfilUsuario.Visible = false;
+                    perfilEmpresa.Visible = false;
                     perfilEmpresa.Visible = false;
                     break;
 

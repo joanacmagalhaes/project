@@ -12,12 +12,12 @@
                             <div class="card-block text-center" style="margin-top:40%">
                                 <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
                                 <asp:TextBox ID="TextBoxNombre" runat="server" Visible="False" ></asp:TextBox>
-                                 <asp:Label ID="LabelNombre" runat="server" Text="Nombre" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" style="padding:10px;"></asp:Label>
+                                 <asp:Label ID="LabelNombre" runat="server" Text="Nombre"></asp:Label>
                                 <p class="mt-2"> 
                                     <asp:TextBox ID="TextBoxApellidos" runat="server" Visible="False"></asp:TextBox>
-                                    <asp:Label ID="LabelApellidos" runat="server" Text="Apellidos" BorderColor="Black" BorderStyle="Solid" BorderWidth="1px" style="padding:10px;" ></asp:Label>
-
+                                    <asp:Label ID="LabelApellidos" runat="server" Text="Apellidos" ></asp:Label>
                                 </p> 
+                                <p class="mt-2"> <asp:Button ID="ButtonEditar" runat="server" Text="Editar" OnClick="ButtonEditar_Click" /></p>
                             </div>
                         </div>
                         <div class="col-sm-8 col-md-8" style="margin-top:10%">
@@ -26,8 +26,9 @@
                                 <hr  style="width:90%; margin-left:0;"/>
                                 <div class="row">
                                     <div class="col-sm-6 mt-4">
+                                           <i class="fas fa-envelope"></i>
                                            <asp:TextBox ID="TextBoxEmail" runat="server" Visible="False" ></asp:TextBox>
-                                            <asp:Label ID="LabelEmail" runat="server" Text="Email"></asp:Label>
+                                           <asp:Label ID="LabelEmail" runat="server" Text="Email"></asp:Label>
                                     </div>
                                     <div class="col-sm-6 mt-4">
                                          <asp:TextBox ID="TextBoxTelefono" runat="server" Visible="False"></asp:TextBox>
@@ -43,13 +44,12 @@
                                         <asp:TextBox ID="TextBoxDni" runat="server" Visible="False"></asp:TextBox>
                                         <asp:Label ID="LabelDni" runat="server" Text="Dni"></asp:Label>
                                     </div>
-                                </div>                               
+                                </div>     
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <asp:Button ID="ButtonEditar" runat="server" Text="Editar" style="margin-left:1117px" OnClick="ButtonEditar_Click" />
         </div>
     </div>
 </div>
