@@ -17,14 +17,14 @@
                     ControlToValidate="TargetControlId" ErrorMessage="Campo Obligatorio"></asp:TextBox>
             </div>
             <div class="form-group">
-                <asp:TextBox ID="HoraInicio" CssClass="form-control inputMaxWidth" runat="server" placeholder="Hora inicio" Text='<%# Bind("OpenTo", "{0:hh:mm tt}") %>' ControlToValidate="TargetControlId" ErrorMessage="Campo Obligatorio" />
+                <asp:TextBox ID="HoraInicio" CssClass="form-control inputMaxWidth" runat="server" placeholder="Hora inicio" ControlToValidate="TargetControlId" ErrorMessage="Campo Obligatorio" TextMode="Time" />
             </div>
 
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <asp:TextBox ID="TextBoxPuntos" runat="server" CssClass="form-control inputMaxWidth"
-                    ControlToValidate="TargetControlId" ErrorMessage="Campo Obligatorio" placeholder="Puntos Evento, ex: 500"></asp:TextBox>
+                    ControlToValidate="TargetControlId" ErrorMessage="Campo Obligatorio" placeholder="Puntos Evento, ex: 500" TextMode="Number"></asp:TextBox>
 
             </div>
 
@@ -35,7 +35,7 @@
             </div>
 
             <div class="form-group">
-                <asp:TextBox ID="HoraFinal" CssClass="form-control inputMaxWidth" runat="server" placeholder="Hora final" Text='<%# Bind("OpenTo", "{0:hh:mm tt}") %>' ControlToValidate="TargetControlId" ErrorMessage="Campo Obligatorio" />
+                <asp:TextBox ID="HoraFinal" CssClass="form-control inputMaxWidth" runat="server" placeholder="Hora final" TextMode="Time" ControlToValidate="TargetControlId" ErrorMessage="Campo Obligatorio" />
 
             </div>
 

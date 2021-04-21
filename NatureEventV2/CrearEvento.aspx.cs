@@ -24,8 +24,8 @@ namespace NatureEventV2
             evento.Nombre = TextBoxNombreActividad.Text;
             evento.Puntos = Convert.ToInt32(TextBoxPuntos.Text);
             evento.Descripcion = TextBoxDescripcion.Text;
-            evento.FechaInicio = Convert.ToString(CalendarFechaInicio.Text);
-            evento.FechaFinal = Convert.ToString(CalendarFechaFinal.Text);
+            evento.FechaInicio = Convert.ToString(CalendarFechaInicio.Text) + " " + HoraInicio.Text;
+            evento.FechaFinal = Convert.ToString(CalendarFechaFinal.Text) + " " + HoraFinal.Text; 
             evento.Direccion = TextBoxDireccion.Text;
             evento.PosX = Convert.ToDouble(TextBoxPosX.Value.Replace('.',','));
             evento.PosY = Convert.ToDouble(TextBoxPosY.Value.Replace('.', ','));
