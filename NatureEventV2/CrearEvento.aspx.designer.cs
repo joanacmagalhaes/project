@@ -15,6 +15,24 @@ namespace NatureEventV2
     {
 
         /// <summary>
+        /// Control TextBoxPosX.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField TextBoxPosX;
+
+        /// <summary>
+        /// Control TextBoxPosY.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField TextBoxPosY;
+
+        /// <summary>
         /// Control TextBoxNombreActividad.
         /// </summary>
         /// <remarks>
@@ -24,13 +42,22 @@ namespace NatureEventV2
         protected global::System.Web.UI.WebControls.TextBox TextBoxNombreActividad;
 
         /// <summary>
-        /// Control TextBoxDescripcion.
+        /// Control CalendarFechaInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDescripcion;
+        protected global::System.Web.UI.WebControls.TextBox CalendarFechaInicio;
+
+        /// <summary>
+        /// Control HoraInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox HoraInicio;
 
         /// <summary>
         /// Control TextBoxPuntos.
@@ -42,40 +69,22 @@ namespace NatureEventV2
         protected global::System.Web.UI.WebControls.TextBox TextBoxPuntos;
 
         /// <summary>
-        /// Control CalendarFechaInicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalendarFechaInicio;
-
-        /// <summary>
-        /// Control TextBoxPosX.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPosX;
-
-        /// <summary>
-        /// Control TextBoxPosY.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPosY;
-
-        /// <summary>
         /// Control CalendarFechaFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalendarFechaFinal;
+        protected global::System.Web.UI.WebControls.TextBox CalendarFechaFinal;
+
+        /// <summary>
+        /// Control HoraFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox HoraFinal;
 
         /// <summary>
         /// Control TextBoxDireccion.
@@ -87,12 +96,21 @@ namespace NatureEventV2
         protected global::System.Web.UI.WebControls.TextBox TextBoxDireccion;
 
         /// <summary>
-        /// Control ButtonCrearEvento.
+        /// Control TextBoxDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCrearEvento;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxDescripcion;
+
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

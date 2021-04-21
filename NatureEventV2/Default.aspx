@@ -20,7 +20,7 @@
         <div class="col-md-2">
             <button type="button" id="BtnFiltro" class="btn btn-success" onclick="mapaFilter()">Aplicar Filtro</button>
         </div>
-        <div class="col-md-12 mb-2"><input id='textBox' type="text" style="width:250px;"/></div>
+        <div class="col-md-12 mb-2"></div>
         <div class="col-md-12">
             <div id="myMap" style="position: relative; width: 100%; height: 700px;"></div>
         </div>
@@ -29,7 +29,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqYVkNUW99uD9gb1YRVpQtpicnUFXDOt05i27d7828ZAmXLnEgAlIL8k9NG0UGOc' async defer></script>
 
     <script type='text/javascript'>
         function unirseEvento(idEvento) {
@@ -76,15 +75,6 @@
             document.getElementById("mensajeServidor").innerHTML = "<div class='alert alert-success alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Resultados: </strong> Se han encontrado " + response.d.length + " eventos.</div>";
             onSucess(response);
 
-        }
-
-        function displayLatLong(e) {
-            if (e.targetType == "map") {
-                var point = new Microsoft.Maps.Point(e.getX(), e.getY());
-                var loc = e.target.tryPixelToLocation(point);
-                document.getElementById("textBox").value = loc.latitude + ", " + loc.longitude;
-
-            }
         }
 
 
@@ -144,15 +134,12 @@
             var buttonHtml = "";
             var Hidden;
             Hidden = document.getElementById("MainContent_HiddenFieldSessionID");
-            console.log(Hidden.value);
 
             $(eventos).each(function () {
                 if (Hidden.value != "") {
                     buttonHtml = "<br><button class='btn btn-primary float-right' type='button' onclick='unirseEvento(" + this.IdEvento + ")'>Unirse</button>";
                 }
-                var texto = "<strong>Fecha inicio</strong>:<br/>" + this.FechaInicio + "<br/><strong>Fecha Final:</strong><br/>" + this.FechaFinal + "<br/><strong>Puntos:</strong><br/>" + this.Puntos + "<br/><strong>Descripción:</strong><br/>" + this.Descripcion + buttonHtml
-
-                    ;
+                var texto = "<strong>Fecha inicio</strong>:<br/>" + this.FechaInicio + "<br/><strong>Fecha Final:</strong><br/>" + this.FechaFinal + "<br/><strong>Puntos:</strong><br/>" + this.Puntos + "<br/><strong>Descripción:</strong><br/>" + this.Descripcion + buttonHtml;
 
                 pin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(this.PosX, this.PosY), {
                     title: this.Nombre,
@@ -166,7 +153,6 @@
                 };
 
                 Microsoft.Maps.Events.addHandler(pin, 'click', pushpinClicked);
-                Microsoft.Maps.Events.addHandler(map, 'click', displayLatLong);
                 map.entities.push(pin);
             });
         }
