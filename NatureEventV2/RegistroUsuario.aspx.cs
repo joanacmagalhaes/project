@@ -28,7 +28,7 @@ namespace NatureEventV2
                 bool validarApellido = validarCampos(TxtApellido);
                 bool validarDireccion = validarCampos(TxtDireccion);
 
-                if ((contrasenyaValida) && (emailValido) && (dniValido) && (telefonoValido)&&(validarNombre)&&(validarApellido)&&(this.Fecha.SelectedDate!=null))
+                if ((contrasenyaValida) && (emailValido) && (dniValido) && (telefonoValido)&&(validarNombre)&&(validarApellido)&&(this.TxtFecha.Text!=""))
                 {
                     DALUsuario dusuario = new DALUsuario();
                     Usuario usuario = new Usuario();
