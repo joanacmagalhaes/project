@@ -153,6 +153,7 @@
     <Content Include="Content\img\logo.svg" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\img\volver.jpg" />
+    <Content Include="CrearEvento.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="PaginaEvento.aspx" />
     <Content Include="favicon.ico" />
@@ -224,6 +225,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearEvento.aspx.cs">
+      <DependentUpon>CrearEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearEvento.aspx.designer.cs">
+      <DependentUpon>CrearEvento.aspx</DependentUpon>
     </Compile>
     <Compile Include="DALEmpresa.cs" />
     <Compile Include="DALEvento.cs" />
