@@ -282,7 +282,6 @@ namespace NatureEventV2
       public List<Evento> SelectListEventosByIdUsuario(int idUsuario)
         {
             List<Evento> eventos = new List<Evento>();
-            Evento evento = new Evento();
 
             try
             {
@@ -297,6 +296,7 @@ namespace NatureEventV2
 
                 while (dr.Read())
                 {
+                    Evento evento = new Evento();
                     evento.IdEvento = (int)dr["IdEvento"];
                     evento.Nombre = (string)dr["Nombre"];
                     evento.Direccion = (string)dr["Direccion"];
@@ -321,6 +321,42 @@ namespace NatureEventV2
             }
             return eventos;
 
+        }
+
+        public void UpdateEventobyId(Evento even)
+        {
+            try
+            {
+                string sql = @"UPDATE Evento 
+                           SET Nombre = @pNombre, Direccion = @pDireccion, Descripcion = @pDescripcion, FechaInicio = @pFechaInicio, FechaFinal = @pFechaFinal
+                           WHERE IdEvento = @pIdEvento";
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+
+                cmd.Parameters.Add(CreateParameter("@pNombre", System.Data.SqlDbType.NVarChar, 30, even.Nombre));
+                cmd.Parameters.Add(CreateParameter("@pDireccion", System.Data.SqlDbType.NVarChar, 100, even.Direccion));
+                cmd.Parameters.Add(CreateParameter("@pDescripcion", System.Data.SqlDbType.NVarChar, 1000, even.Descripcion));
+                cmd.Parameters.Add(CreateParameter("@pFechaInicio", System.Data.SqlDbType.DateTime, 0, even.FechaInicio));
+                cmd.Parameters.Add(CreateParameter("@pFechaFinal", System.Data.SqlDbType.DateTime, 0, even.FechaFinal));
+                cmd.Parameters.Add(CreateParameter("@pIdEvento", System.Data.SqlDbType.Int, 0, even.IdEvento));
+
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                //Console.Write(ex.Message);
+                //Console.WriteLine("Ha habido un error a la hora de hacer el UPDATE:\n" + ex.Message );
+                //MessageBox.Show("Ha habido un error con el UPDATE:\n" + ex.Message);
+            }
+        }
+        public static SqlParameter CreateParameter(string pNombre, System.Data.SqlDbType tipo, int longitud, object valor)
+        {
+
+            SqlParameter param = new SqlParameter(pNombre, tipo, longitud);
+            param.Value = DbConnect.NullToDB(valor);
+
+            return param;
         }
 
     }
