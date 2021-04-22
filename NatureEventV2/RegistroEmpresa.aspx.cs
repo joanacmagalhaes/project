@@ -43,6 +43,7 @@ namespace NatureEventV2
             }
             catch (Exception ex)
             {
+                throw new Exception("Error validar_empresa_click:" + ex.Message);
 
             }
 
@@ -86,7 +87,7 @@ namespace NatureEventV2
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -126,7 +127,7 @@ namespace NatureEventV2
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -153,7 +154,7 @@ namespace NatureEventV2
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -183,7 +184,7 @@ namespace NatureEventV2
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
