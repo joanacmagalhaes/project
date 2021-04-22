@@ -7,7 +7,11 @@
     <div class="row">
         <asp:HiddenField ID="TextBoxPosX" runat="server" />
         <asp:HiddenField ID="TextBoxPosY" runat="server" />
-
+        <div class="col-md-12">
+            <div class="form-group">
+                <asp:Literal ID="TextMensaje" Visible="false" runat="server" />
+            </div>
+        </div>
         <div class="col-md-6">
             <div class="form-group">
                 <asp:TextBox ID="TextBoxNombreActividad" runat="server" CssClass="form-control inputMaxWidth" placeholder="Nombre actividad" ControlToValidate="TargetControlId" ErrorMessage="Campo Obligatorio"></asp:TextBox>
