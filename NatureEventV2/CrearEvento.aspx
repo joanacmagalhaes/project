@@ -96,7 +96,7 @@
                 timeFormat: "hh:mm:ss",
                 changeMonth: true,
                 changeYear: true,
-                minDate: 0
+                minDate: +7
 
             });
         $('#MainContent_CalendarFechaFinal').datepicker(
@@ -105,7 +105,7 @@
                 timeFormat: "hh:mm:ss",
                 changeMonth: true,
                 changeYear: true,
-                minDate: 0
+                minDate: +7
 
             });
     </script>

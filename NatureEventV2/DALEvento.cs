@@ -273,7 +273,7 @@ namespace NatureEventV2
             }
             catch (Exception ex) {
 
-                Console.WriteLine("Ha habido un error a la hora de hacer un INSERT.");
+                throw new Exception("InsertarEvento()" + ex.Message);
             }
             
 
