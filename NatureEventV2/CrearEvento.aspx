@@ -53,12 +53,16 @@
         </div>
         <div class="col-md-12">
             <div class="form-group">
-                <div class="alert alert-info alert-dismissible">
+                <div class="alert alert-info alert-dismissible" >
                     <strong>Información:</strong> Haz clic en el mapa donde vas a llevar acabo el evento.
+                    
                 </div>
+                
+                <asp:Label ID="TextoAlerta" Text="" runat="server"></asp:Label>
                 <div id="myMap" style="position: relative; width: 100%; height: 300px;"></div>
             </div>
         </div>
+        
         <div class="form-group">
             <asp:Button ID="Button1" runat="server" Text="Subir Evento" CssClass="form-control btn btn-primary inputMaxWidth" OnClick="ButtonCrearEvento_Click" />
         </div>
