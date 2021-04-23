@@ -4,7 +4,7 @@
 
 <html lang="es">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - NaturEvent</title>
@@ -13,7 +13,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -42,54 +42,89 @@
 
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-            
-            <a class="navbar-brand link-logo" runat="server" href="~/"><img class="logo" src="Content/img/logo.svg" /><span style="margin-left:5px;">NaturEvent</span></a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+            <a class="navbar-brand link-logo" runat="server" href="~/">
+                <img class="logo" src="Content/img/logo.svg" /><span style="margin-left: 5px;">NaturEvent</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                      <a class="nav-link" id="registroUsuario" runat="server" href="~/RegistroUsuario">Registro</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" id="loginId" runat="server" href="~/Login">Login</a>
-                  </li>
-                  <li class="nav-item">
-                        <a class="nav-link" ID="perfilUsuario" runat="server" href="~/PerfilUsuario">Perfil</a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="registroUsuario" runat="server" href="~/RegistroUsuario">Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="loginId" runat="server" href="~/Login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="perfilUsuario" runat="server" href="~/PerfilUsuario">Perfil</a>
+                    </li>
                     <li class="nav-item">
                         <asp:LinkButton CssClass="nav-link btn btn-primary" ForeColor="White" ID="linkCrearEvento" runat="server" href="CrearEvento">Crear Evento</asp:LinkButton>
-                  </li>
-                   <li class="nav-item">
-                        <a class="nav-link" ID="perfilEmpresa" runat="server" href="~/PerfilEmpresa">Perfil</a>
-                  </li>
+                    </li>
                     <li class="nav-item">
-                     <a class="nav-link" ID="historialEventos" runat="server" href="~/historialEventos"><span class="glyphicon glyphicon-log-in"></span>Historial</a>
-                   </li>
-                     <li class="nav-item">
-                      <asp:LinkButton ID="logoutId" CssClass="nav-link" runat="server" Text="Logout" OnClick="logoutId_Click"></asp:LinkButton>
-                   </li>
+                        <a class="nav-link" id="perfilEmpresa" runat="server" href="~/PerfilEmpresa">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="historialEventos" runat="server" href="~/historialEventos"><span class="glyphicon glyphicon-log-in"></span>Historial</a>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton ID="logoutId" CssClass="nav-link" runat="server" Text="Logout" OnClick="logoutId_Click"></asp:LinkButton>
+                    </li>
                 </ul>
-              </div>
+            </div>
         </nav>
         <div class="container body-content">
-            
+            <div class="mb-2"></div>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            
+
         </div>
-         <footer class="footer" style="position:absolute; bottom:0">
-                <ul class="list-inline">
-                  <li class="list-inline-item">
-                    <a class="nav-link" runat="server" href="~/About">Sobre nosotros</a>
-                  </li>
-                  <li class="list-inline-item">
-                     <a class="nav-link" runat="server" href="~/Contact">Contacto</a>
-                  </li>
-                </ul>
+        <div class="mt-2"></div>
+        <!-- Footer -->
+        <footer class="bg-info text-white text-center text-lg-start footer">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Footer Content</h5>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+          voluptatem veniam, est atque cumque eum delectus sint!
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a class="text-white" runat="server" href="~/Contact">Contacto</a>
+                            </li>
+                            <li>
+                                <a class="text-white" runat="server" href="~/About">Sobre nosotros</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center text-primary p-3" style="background-color: rgb(255 255 255);">
                 <p>&copy; <%: DateTime.Now.Year %> - Fundacion Esplai</p>
-         </footer>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
     </form>
 
 </body>

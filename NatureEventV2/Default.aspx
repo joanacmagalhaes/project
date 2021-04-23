@@ -22,8 +22,9 @@
         </div>
         <div class="col-md-12 mb-2"></div>
         <div class="col-md-12">
-            <div id="myMap" style="position: relative; width: 100%; height: 700px;"></div>
+            <div id="myMap" style="position: relative; width: 100%; height: auto;"></div>
         </div>
+        <div class="mb-2"></div>
     </div>
 
 

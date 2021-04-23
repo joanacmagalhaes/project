@@ -3,9 +3,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-/*    background-image: url(img/background-body.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;*/
+    background-color: ghostwhite;
 }
 
 /* Wrapping element */
@@ -13,7 +11,6 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -27,7 +24,9 @@ textarea {
     max-width: none !important;
 }
 
-
+#myMap{
+    min-height:700px;
+}
 /*Title evento box y linkHome color*/
 .infobox-title, .link-logo {
     color: forestgreen !important;
@@ -43,10 +42,8 @@ textarea {
 /*Footer css*/
 .footer {
     width: 100%;
-    position: relative;
-    
-    text-align: center;
-    background-color: lightsteelblue;
+    bottom: 0;
+    left: 0;
 }
 
 /*DataPicker*/

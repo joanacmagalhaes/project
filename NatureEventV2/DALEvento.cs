@@ -100,14 +100,12 @@ namespace NatureEventV2
         public List<Evento> SelectListEvento()
         {
             List<Evento> eventos = new List<Evento>();
-            DALEmpresa dALEmpresa = new DALEmpresa();
             Evento evento;
             try
             {
                 DateTime today = DateTime.Now;
                 string sql = @"SELECT * FROM EventoBox";
                 SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
-                cmd.Parameters.Add(DALUsuario.CreateParameter("@today", SqlDbType.DateTime, 0, today));
                 SqlDataReader dr = cmd.ExecuteReader();
                 
                 while (dr.Read())
