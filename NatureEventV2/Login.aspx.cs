@@ -39,7 +39,8 @@ namespace NatureEventV2
             else
             {
                 DALUsuario user = new DALUsuario();
-                Session["idUser"] = user.comprobarLoginUsuario(InputEmail.Text, InputPassword.Text, LoginEmpresaUsuario.SelectedIndex);
+                //Console.WriteLine(EncriptarPassword(InputPassword.Text));
+                Session["idUser"] = user.comprobarLoginUsuario(InputEmail.Text, EncriptarPassword(InputPassword.Text), LoginEmpresaUsuario.SelectedIndex);
                 if (Session["idUser"] == null)
                 {
                     
@@ -54,6 +55,23 @@ namespace NatureEventV2
                 
             }
 
+        }
+
+        public string EncriptarPassword(string password)
+        {
+            string result = string.Empty;
+            byte[] encrypted = System.Text.Encoding.Unicode.GetBytes(password);
+            result = Convert.ToBase64String(encrypted);
+            return result;
+        }
+
+        public string DesencriptarPassword(string password)
+        {
+            string result = string.Empty;
+            byte[] decrypted = Convert.FromBase64String(password);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decrypted);
+            return result;
         }
     }
 }
