@@ -43,6 +43,9 @@
                     <div class="card-block text-center mt-3">
                         <asp:Button ID="ButtonEditar" runat="server" Text="Editar" Visible="false" OnClick="ButtonEditar_Click" />
                     </div>
+                     <div class="card-block text-center mt-3">
+                        <asp:Button ID="ButAsistencia" runat="server" Text="Asistencia" Visible="false" PostBackUrl="~/Asistencia.aspx" />
+                    </div>
                 </div>
             </div>
             <div>

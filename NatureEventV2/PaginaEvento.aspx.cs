@@ -18,6 +18,7 @@ namespace NatureEventV2
             {
                 case 1:
                     ButtonEditar.Visible = true;
+                    ButAsistencia.Visible = true;
                     break;
             }
             DALEvento dalEven = new DALEvento();

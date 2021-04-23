@@ -100,14 +100,12 @@ namespace NatureEventV2
         public List<Evento> SelectListEvento()
         {
             List<Evento> eventos = new List<Evento>();
-            DALEmpresa dALEmpresa = new DALEmpresa();
             Evento evento;
             try
             {
                 DateTime today = DateTime.Now;
                 string sql = @"SELECT * FROM EventoBox";
                 SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
-                cmd.Parameters.Add(DALUsuario.CreateParameter("@today", SqlDbType.DateTime, 0, today));
                 SqlDataReader dr = cmd.ExecuteReader();
                 
                 while (dr.Read())
@@ -325,7 +323,9 @@ namespace NatureEventV2
             try
             {
                 string sql = @"UPDATE Evento 
-                           SET Nombre = @pNombre, Direccion = @pDireccion, Descripcion = @pDescripcion, FechaInicio = @pFechaInicio, FechaFinal = @pFechaFinal
+                           SET Nombre = @pNombre, Direccion = @pDireccion,
+                           Descripcion = @pDescripcion, FechaInicio = @pFechaInicio, 
+                           FechaFinal = @pFechaFinal
                            WHERE IdEvento = @pIdEvento";
                 SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
 
@@ -347,6 +347,43 @@ namespace NatureEventV2
                 //MessageBox.Show("Ha habido un error con el UPDATE:\n" + ex.Message);
             }
         }
+        public List<Usuario> selectUsuariByIdEvento(int idEvento)
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+
+            try
+            {
+                string sql = @"select Nombre, Apellido, IdUsuario from asistencia inner join Usuario on RIdUsuario = IdUsuario where RIdEvento=@pId;
+";
+                SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
+                SqlParameter pId = new SqlParameter("pId", SqlDbType.Int);
+                pId.Value = idEvento;
+                cmd.Parameters.Add(pId);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Usuario usu = new Usuario();
+                    usu.IdUsuario = (int)dr["IdUsuario"];
+                    usu.Nombre = (string)dr["Nombre"];
+                    usu.Apellido = (string)dr["Apellido"];
+                    usuarios.Add(usu);
+
+
+                }
+
+                dr.Close();
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error SelectEventoById:" + ex.Message);
+            }
+            return usuarios;
+
+        }
+    
         public static SqlParameter CreateParameter(string pNombre, System.Data.SqlDbType tipo, int longitud, object valor)
         {
 
