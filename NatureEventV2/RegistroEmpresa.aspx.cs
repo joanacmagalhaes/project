@@ -119,20 +119,7 @@ namespace NatureEventV2
                 return false;
             }
         }
-        public bool validarDNI()
-        {
-            try
-            {
-                var dni = Convert.ToString(TxtCIF.Text);
 
-                
-             
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
        
         public bool validartelefono()
         {
