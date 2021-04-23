@@ -66,7 +66,7 @@ namespace NatureEventV2
             {
                 TextoAlerta.Text = "Tienes que clickar el punto del mapa en el que se organizara el evento";
                 TextoAlerta.ForeColor = System.Drawing.Color.Red;
-                ContentArea.Control.Add
+             
                 return false;
             }
             else
