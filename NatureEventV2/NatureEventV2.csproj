@@ -150,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Asistencia.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -225,6 +226,14 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Asistencia.aspx.cs">
+      <DependentUpon>Asistencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Asistencia.aspx.designer.cs">
+      <DependentUpon>Asistencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="asistencia.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -239,6 +248,7 @@
     <Compile Include="CrearEvento.aspx.designer.cs">
       <DependentUpon>CrearEvento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DALAsistencia.cs" />
     <Compile Include="DALEmpresa.cs" />
     <Compile Include="DALEvento.cs" />
     <Compile Include="DALUsuario.cs" />
