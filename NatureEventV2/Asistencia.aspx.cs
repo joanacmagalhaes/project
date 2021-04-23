@@ -11,12 +11,14 @@ namespace NatureEventV2
 {
     public partial class Asistencia : System.Web.UI.Page
     {
-     
+        private CheckBoxList Cbx;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+            
             if (ContentArea.FindControl("asistenciachecklist") == null)
             {
+                ContentArea.Controls.Clear();
                 DALEvento dalEven = new DALEvento();
                 List<Usuario> usuarios = new List<Usuario>();
                 usuarios = dalEven.selectUsuariByIdEvento((int)Application["IdEven"]);
@@ -54,7 +56,7 @@ namespace NatureEventV2
         public void ButtonAsistencia_Click (object sender, EventArgs e)
         {
             DALAsistencia dalasis = new DALAsistencia();
-            CheckBoxList Cbx = (CheckBoxList)ContentArea.FindControl("asistenciachecklist");
+            this.Cbx = (CheckBoxList)ContentArea.FindControl("asistenciachecklist");
             foreach (ListItem usuario in Cbx.Items)
             {
                 asistencia asis = new asistencia();
