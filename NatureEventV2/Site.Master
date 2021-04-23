@@ -59,7 +59,7 @@
                         <a class="nav-link" ID="perfilUsuario" runat="server" href="~/PerfilUsuario">Perfil</a>
                   </li>
                     <li class="nav-item">
-                        <asp:LinkButton CssClass="nav-link btn btn-primary" ForeColor="White" ID="linkCrearEvento" runat="server" href="~/CrearEvento">Crear Evento</asp:LinkButton>
+                        <asp:LinkButton CssClass="nav-link btn btn-primary" ForeColor="White" ID="linkCrearEvento" runat="server" href="CrearEvento">Crear Evento</asp:LinkButton>
                   </li>
                    <li class="nav-item">
                         <a class="nav-link" ID="perfilEmpresa" runat="server" href="~/PerfilEmpresa">Perfil</a>
