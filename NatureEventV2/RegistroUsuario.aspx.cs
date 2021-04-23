@@ -35,7 +35,7 @@ namespace NatureEventV2
                     usuario.Nombre = TxtUsuario.Text;
                     usuario.Apellido = TxtApellido.Text;
                     usuario.Email = TxtEmail.Text;
-                    usuario.Pwd = TxtContrasenya.Text;
+                    usuario.Pwd = EncriptarPassword(TxtContrasenya.Text);
                     usuario.Dni = TxtDNI.Text;
                     usuario.FechaNac = Convert.ToDateTime(TxtFecha.Text);
                     usuario.Direccion = TxtDireccion.Text;
@@ -47,7 +47,7 @@ namespace NatureEventV2
             }
             catch (Exception ex)
             {
-                throw new Exception("Error validar_click:" + ex.Message);
+                //throw new Exception("Error validar_click:" + ex.Message);
             }
 
         }
@@ -205,6 +205,23 @@ namespace NatureEventV2
             }
 
             else return true;
+        }
+
+        public string EncriptarPassword(string password)
+        {
+            string result = string.Empty;
+            byte[] encrypted = System.Text.Encoding.Unicode.GetBytes(password);
+            result = Convert.ToBase64String(encrypted);
+            return result;
+        }
+
+        public string DesencriptarPassword(string password)
+        {
+            string result = string.Empty;
+            byte[] decrypted = Convert.FromBase64String(password);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decrypted);
+            return result;
         }
     }
 

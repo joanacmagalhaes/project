@@ -32,7 +32,7 @@ namespace NatureEventV2
                     Empresa empresa = new Empresa();
                     empresa.Nombre = TxtUsuario.Text;
                     empresa.Email = TxtEmail.Text;
-                    empresa.Pwd = TxtContrasenya.Text;
+                    empresa.Pwd = EncriptarPassword(TxtContrasenya.Text);
                     empresa.Cif = TxtCIF.Text;
                     empresa.Direccion = TxtDireccion.Text;
                     empresa.Telefono = (Int32.Parse(TxtTelefono.Text));
@@ -198,6 +198,23 @@ namespace NatureEventV2
             }
 
             else return true;
+        }
+
+        public string EncriptarPassword(string password)
+        {
+            string result = string.Empty;
+            byte[] encrypted = System.Text.Encoding.Unicode.GetBytes(password);
+            result = Convert.ToBase64String(encrypted);
+            return result;
+        }
+
+        public string DesencriptarPassword(string password)
+        {
+            string result = string.Empty;
+            byte[] decrypted = Convert.FromBase64String(password);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decrypted);
+            return result;
         }
     }
 }
