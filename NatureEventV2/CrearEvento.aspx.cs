@@ -41,7 +41,17 @@ namespace NatureEventV2
                 evento.PosX = Convert.ToDouble(TextBoxPosX.Value.Replace('.', ','));
                 evento.PosY = Convert.ToDouble(TextBoxPosY.Value.Replace('.', ','));
 
+            
+            try
+            {
+                this.TextMensaje.Visible = true;
                 dalEvento.InsertarEvento(evento);
+                this.TextMensaje.Text = "<div class='alert alert-success alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Exito!</strong> Se ha enviado el mensaje a NatureEvent.</div>";
+            }
+            catch (Exception)
+            {
+                this.TextMensaje.Text =  "<div class='alert alert-warning alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Fallo!</strong> Ha ocurrido un error en la conexión del servidor, prueba más tarde.</div>";
+
             }
         }
 
