@@ -43,6 +43,7 @@
                                     <div class="col-sm-6 mt-4 mb-5">
                                         <asp:TextBox ID="TextBoxDni" runat="server" Visible="False"></asp:TextBox>
                                         <asp:Label ID="LabelDni" runat="server" Text="Dni"></asp:Label>
+                                        <a href="PaginaEvento.asp?ID=asp.></a>
                                     </div>
                                 </div>     
                             </div>

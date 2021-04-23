@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -282,6 +282,26 @@ namespace NatureEventV2
                 return false;
             }
         }
+		
+		
+    public string EncriptarPassword(string password)
+        {
+            string result = string.Empty;
+            byte[] encrypted = System.Text.Encoding.Unicode.GetBytes(password);
+            result = Convert.ToBase64String(encrypted);
+            return result;
+        }
+		
+		public string DesencriptarPassword(string password)
+        {
+            string result = string.Empty;
+            byte[] decrypted = Convert.FromBase64String(password);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decrypted);
+            return result;
+        }
+
+		
     }
 
 

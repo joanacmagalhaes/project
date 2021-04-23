@@ -1,17 +1,80 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="NatureEventV2.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your contact page.</h3>
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+    <section class="mb-4">
 
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
-</asp:Content>
+        <!--Section heading-->
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Contactanos</h2>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-5">
+            ¿Tienes alguna pregunta o duda? Por favor no dudes en contactarnos directamente. Nuestro equipo estará a tu disposición horas después de tu mensaje.
+        </p>
+
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-md-12">
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <asp:Literal ID="TextMensajeInfo" runat="server" Text=""></asp:Literal>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name" class="">Nombre</label>
+                            <asp:TextBox ID="TextNombre" TextMode="SingleLine" runat="server" CssClass="form-control inputMaxWidth" MaxLength="50"></asp:TextBox>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email" class="">Email</label>
+                            <asp:TextBox ID="TextBoxEmail" TextMode="Email" runat="server" CssClass="form-control inputMaxWidth" MaxLength="50"></asp:TextBox>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="subject" class="">Asunto</label>
+                            <asp:TextBox ID="TextBoxAsunto" TextMode="SingleLine" runat="server" CssClass="form-control inputMaxWidth" MaxLength="100"></asp:TextBox>
+                        </div>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-12">
+
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <asp:TextBox ID="TextAreaMensaje" TextMode="MultiLine" MaxLength="400" Rows="10" runat="server" CssClass="form-control inputMaxWidth"></asp:TextBox>
+                        </div>
+
+                    </div>
+                </div>
+                <!--Grid row-->
+
+
+                <div class="form-group">
+                    <asp:Button CssClass="btn btn-primary" ID="btnEnviar" Text="Enviar" OnClick="btnEnviar_Click" runat="server" />
+                </div>
+            </div>
+
+        </div>
+
+    </section></asp:Content>

@@ -19,6 +19,7 @@ namespace NatureEventV2
             {
                 logoutId.Visible = true;
                 loginId.Visible = false;
+
                 registroUsuario.Visible = false;
             }
             switch (Session["user"])
@@ -27,16 +28,19 @@ namespace NatureEventV2
                     perfilUsuario.Visible = true;
                     perfilEmpresa.Visible = false;
                     linkCrearEvento.Visible = false;
+                    historialEventos.Visible = true;
                     break;
                 case 1:
                     perfilUsuario.Visible = false;
                     perfilEmpresa.Visible = true;
                     linkCrearEvento.Visible = true;
+                    historialEventos.Visible = true;
                     break;
                 default:
                     perfilUsuario.Visible = false;
                     perfilEmpresa.Visible = false;
                     perfilEmpresa.Visible = false;
+                    historialEventos.Visible = false;
                     break;
 
 

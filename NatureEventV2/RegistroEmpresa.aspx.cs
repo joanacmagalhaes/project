@@ -36,7 +36,7 @@ namespace NatureEventV2
                     Empresa empresa = new Empresa();
                     empresa.Nombre = TxtUsuario.Text;
                     empresa.Email = TxtEmail.Text;
-                    empresa.Pwd = TxtContrasenya.Text;
+                    empresa.Pwd = EncriptarPassword(TxtContrasenya.Text);
                     empresa.Cif = TxtCIF.Text;
                     empresa.Direccion = TxtDireccion.Text;
                     empresa.Telefono = (Int32.Parse(TxtTelefono.Text));
@@ -47,6 +47,7 @@ namespace NatureEventV2
             }
             catch (Exception ex)
             {
+                throw new Exception("Error validar_empresa_click:" + ex.Message);
 
             }
 
@@ -90,7 +91,7 @@ namespace NatureEventV2
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -112,11 +113,22 @@ namespace NatureEventV2
                     TxtEmail.BorderColor = System.Drawing.Color.Red;
                     return false;
                 }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public bool validarDNI()
+        {
+            try
+            {
+                var dni = Convert.ToString(TxtCIF.Text);
 
                 
              
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -138,7 +150,7 @@ namespace NatureEventV2
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -265,5 +277,21 @@ namespace NatureEventV2
             }
         }
 
+        public string EncriptarPassword(string password)
+        {
+            string result = string.Empty;
+            byte[] encrypted = System.Text.Encoding.Unicode.GetBytes(password);
+            result = Convert.ToBase64String(encrypted);
+            return result;
+        }
+
+        public string DesencriptarPassword(string password)
+        {
+            string result = string.Empty;
+            byte[] decrypted = Convert.FromBase64String(password);
+            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decrypted);
+            return result;
+        }
     }
 }

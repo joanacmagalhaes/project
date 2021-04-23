@@ -29,7 +29,7 @@ namespace NatureEventV2
             bool validarHoraFinal = validarcampos(HoraFinal);
             bool validarPosicionX = validarPosiciones(TextBoxPosX.Value);
             bool validarPosicionY = validarPosiciones(TextBoxPosX.Value);
-            if ((validarNombre) && (validarDescripcion) && (validarPuntos) && (validarDireccion) && (validarCalendarioInicio) && (validarCalendarioFinal) && (validarHoraFinal)&&(validarHoraInicio)&&(validarPosicionX)&&(validarPosicionY))
+            if ((validarNombre) && (validarDescripcion) && (validarPuntos) && (validarDireccion) && (validarCalendarioInicio) && (validarCalendarioFinal) && (validarHoraFinal) && (validarHoraInicio) && (validarPosicionX) && (validarPosicionY))
             {
                 evento.RIdEmpresa = (int)Session["idUser"];
                 evento.Nombre = TextBoxNombreActividad.Text;
@@ -41,15 +41,25 @@ namespace NatureEventV2
                 evento.PosX = Convert.ToDouble(TextBoxPosX.Value.Replace('.', ','));
                 evento.PosY = Convert.ToDouble(TextBoxPosY.Value.Replace('.', ','));
 
-                dalEvento.InsertarEvento(evento);
+
+                try
+                {
+                    this.TextMensaje.Visible = true;
+                    dalEvento.InsertarEvento(evento);
+                    this.TextMensaje.Text = "<div class='alert alert-success alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Exito!</strong> Se ha enviado el mensaje a NatureEvent.</div>";
+                }
+                catch (Exception)
+                {
+                    this.TextMensaje.Text = "<div class='alert alert-warning alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Fallo!</strong> Ha ocurrido un error en la conexión del servidor, prueba más tarde.</div>";
+
+                }
             }
+
         }
-
-
 
         public bool validarcampos(TextBox campo)
         {
-            if((campo.Text =="")||(campo.Text==null))
+            if ((campo.Text == "") || (campo.Text == null))
             {
                 campo.BorderColor = System.Drawing.Color.Red;
                 return false;
@@ -62,11 +72,10 @@ namespace NatureEventV2
         }
         public bool validarPosiciones(string posicion)
         {
-            if ((posicion=="")||(posicion==null))
+            if ((posicion == "") || (posicion == null))
             {
-                TextoAlerta.Text = "Tienes que clickar el punto del mapa en el que se organizara el evento";
-                TextoAlerta.ForeColor = System.Drawing.Color.Red;
-             
+                this.TextMensaje.Visible = true;
+                this.TextMensaje.Text = "<div class='alert alert-danger  alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Fallo!</strong> Tienes que hacer clic en el mapa para indicar donde se llevará a cabo el evento.</div>";
                 return false;
             }
             else
@@ -77,6 +86,7 @@ namespace NatureEventV2
 
 
         }
-     
+
     }
-}
+} 
+

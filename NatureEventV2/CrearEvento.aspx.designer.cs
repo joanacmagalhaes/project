@@ -33,6 +33,15 @@ namespace NatureEventV2
         protected global::System.Web.UI.WebControls.HiddenField TextBoxPosY;
 
         /// <summary>
+        /// Control TextMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal TextMensaje;
+
+        /// <summary>
         /// Control TextBoxNombreActividad.
         /// </summary>
         /// <remarks>
@@ -103,15 +112,6 @@ namespace NatureEventV2
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxDescripcion;
-
-        /// <summary>
-        /// Control TextoAlerta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TextoAlerta;
 
         /// <summary>
         /// Control Button1.
