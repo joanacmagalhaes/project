@@ -105,12 +105,9 @@ namespace NatureEventV2
             try
             {
                 DateTime today = DateTime.Now;
-                string sql = @"SELECT * FROM Evento WHERE FechaInicio>@today";
+                string sql = @"SELECT * FROM EventoBox";
                 SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
-                SqlParameter pDate = new SqlParameter("today", SqlDbType.DateTime);
-                pDate.Value = today;
-                cmd.Parameters.Add(pDate);
-
+                cmd.Parameters.Add(DALUsuario.CreateParameter("@today", SqlDbType.DateTime, 0, today));
                 SqlDataReader dr = cmd.ExecuteReader();
                 
                 while (dr.Read())
@@ -126,7 +123,7 @@ namespace NatureEventV2
                     evento.PosY = Double.Parse(dr["PosY"].ToString());
                     evento.FechaInicio = dr["FechaInicio"].ToString().Replace('{',' ');
                     evento.FechaFinal = dr["FechaFinal"].ToString().Replace('{', ' ');
-                    evento.NombreEmpresa = dALEmpresa.SelectNombreEmpresaById(evento.IdEvento);
+                    evento.NombreEmpresa = (string)dr["NombreEmpresa"];
                     eventos.Add(evento);
                 }
 
