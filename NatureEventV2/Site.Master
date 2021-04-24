@@ -81,7 +81,7 @@
             </asp:ContentPlaceHolder>
 
         </div>
-        <div clas mb-5-2 mb-5"></div>
+        <div class="mb-3"></div>
         <!-- Footer -->
         <footer class="bg-info text-white text-center text-lg-start footer">
             <!-- Grid container -->
