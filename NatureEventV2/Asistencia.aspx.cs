@@ -29,27 +29,12 @@ namespace NatureEventV2
 
                 foreach (Usuario usu in usuarios)
                 {
-                    //var checkbox = new CheckBox
-                    //{
-                    //    ID = "check"+i,
-
-                    //};
-
-
-                    // ContentArea.Controls.Add(new LiteralControl("<div style='border-style:solid; border-width:thin;' class='col-md-6 col-lg-6 position-static p-4 mb-3'><p>" + usu.Nombre + " " + usu.Apellido + "</p>"));
-                    //ContentArea.Controls.Add(checkbox);
-                    //checkbox.InputAttributes.Add("atribut", usu.IdUsuario.ToString());
-                    //checkbox.InputAttributes.Add("name", "check" + i);
-                    //checkList.Items.Add(usu.Nombre + " " + usu.Apellido);
                     ListItem li = new ListItem();
                     li.Text = usu.Nombre + " " + usu.Apellido;
                     li.Value = (usu.IdUsuario).ToString();
                     checkList.Items.Add(li);
                     ContentArea.Controls.Add(checkList);
-                    // ContentArea.Controls.Add(new LiteralControl("</div>"));
-
-
-                }
+                 }
             }
         }
 

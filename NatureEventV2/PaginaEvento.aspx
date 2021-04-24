@@ -3,10 +3,13 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container mt-4">
+    <div id="submenu" class="mt-2 mb-5" style=" height:4%; ">
+            <p><a style="color:gray;" href="Server.Transfer("HistorialEventos.aspx");">Historial Eventos</a> &nbsp > &nbsp <b style="color:darkslategray">Evento</b></p>
+    </div>
+    <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="row">
+                <div class="row mt-3">
                     <div class="card-block text-center">
                         <p>
                             <asp:TextBox ID="TextBoxNombreEvento" runat="server" Visible="false"></asp:TextBox>
@@ -41,10 +44,10 @@
                 </div>
                 <div class="row">
                     <div class="card-block text-center mt-3">
-                        <asp:Button ID="ButtonEditar" runat="server" Text="Editar" Visible="false" OnClick="ButtonEditar_Click" />
+                        <asp:Button ID="ButtonEditar" class="btn btn-primary" runat="server" Text="Editar" Visible="false" OnClick="ButtonEditar_Click" />
                     </div>
-                     <div class="card-block text-center mt-3">
-                        <asp:Button ID="ButAsistencia" runat="server" Text="Asistencia" Visible="false" PostBackUrl="~/Asistencia.aspx" />
+                     <div class="card-block text-center mt-3 ml-2">
+                        <asp:Button ID="ButAsistencia" class="btn btn-primary"  runat="server" Text="Asistencia" Visible="false" Onclick="ButtonAsistencia" />
                     </div>
                 </div>
             </div>
@@ -59,4 +62,29 @@
         </div>
     </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <asp:UpdatePanel ID="ContentArea" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+          <ContentTemplate>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Asistencia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <asp:Panel ID="ContentTemplate2" runat="server"></asp:Panel>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <asp:Button ID="guardarAsistencia" runat="server" Text="Guardar" class="btn btn-primary" OnClick="ButtonAsistencia_Click"/>
+      </div>
+    </div>
+ </ContentTemplate>
+ </asp:UpdatePanel>
+ </div>
+</div>
+         
 </asp:Content>

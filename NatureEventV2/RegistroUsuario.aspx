@@ -11,7 +11,7 @@
         <div class="row mt-4">
             <div class="row no-gutters bg-light position-relative">
                 <div class="col-md-6 mb-md-0 p-md-4">
-                    <img src="..." class="w-100" alt="...">
+                    <img src="https://picsum.photos/id/1050/300/400" class="w-100" alt="...">
                 </div>
                 <div class="col-md-6 position-static p-4 pl-md-0">
                     <h5 class="mt-0">Registro Usuario</h5>
@@ -23,7 +23,7 @@
         <div class="row mt-3">
             <div class="row no-gutters bg-light position-relative">
                 <div class="col-md-6 mb-md-0 p-md-4">
-                    <img src="..." class="w-100" alt="...">
+                    <img src="https://picsum.photos/id/3/300/400" class="w-100" alt="...">
                 </div>
                 <div class="col-md-6 position-static p-4 pl-md-0">
                     <h5 class="mt-0">Registro Empresa</h5>
