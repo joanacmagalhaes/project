@@ -15,6 +15,7 @@ namespace NatureEventV2
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["idUser"] != null) HiddenFieldSessionID.Value = Session["idUser"].ToString();
+            if (Session["user"] != null) HiddenFieldTypeUser.Value = Session["user"].ToString();
 
 
             List<Empresa> empresas = GetEmpresas();

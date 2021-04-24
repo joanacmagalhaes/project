@@ -2,6 +2,8 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:HiddenField ID="HiddenFieldSessionID" runat="server" />
+    <asp:HiddenField ID="HiddenFieldTypeUser" runat="server" />
+
     <div class="row">
         <div class="col-md-12" id="mensajeServidor"></div>
         <div class="col-md-12">
@@ -134,10 +136,10 @@
 
             var buttonHtml = "";
             var Hidden;
-            Hidden = document.getElementById("MainContent_HiddenFieldSessionID");
+            Hidden = document.getElementById("MainContent_HiddenFieldTypeUser");
 
             $(eventos).each(function () {
-                if (Hidden.value != "") {
+                if (Hidden.value == "0") {
                     buttonHtml = "<br><button class='btn btn-primary float-right' type='button' onclick='unirseEvento(" + this.IdEvento + ")'>Unirse</button>";
                 }
                 var texto = "<strong>Fecha inicio</strong>:<br/>" + this.FechaInicio + "<br/><strong>Fecha Final:</strong><br/>" + this.FechaFinal + "<br/><strong>Puntos:</strong><br/>" + this.Puntos + "<br/><strong>Descripción:</strong><br/>" + this.Descripcion + buttonHtml;
