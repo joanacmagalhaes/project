@@ -16,6 +16,7 @@ namespace NatureEventV2
             DALEvento dalEvento = new DALEvento();
             Empresa empresa = new Empresa();
             List<Evento> eventos = new List<Evento>();
+            ContentArea.FindControl("BodyContent");
 
             if ((int)Session["user"] == 1)
             {
@@ -26,7 +27,7 @@ namespace NatureEventV2
 
                     //var p = new HtmlGenericControl("p") { InnerText = evento.Nombre.ToString() + " " + evento.FechaInicio };
                     //ContentArea.Controls.Add(p);
-                    ContentArea.Controls.Add(new LiteralControl("<div style='border-style:solid; border-width:thin;' class='col-md-6 col-lg-6 position-static p-4 mb-3'><h5>" + evento.Nombre + "</h5><p>" + evento.Descripcion.ToString() + "</p>"));
+                    ContentArea.Controls.Add(new LiteralControl("<div style='border-style:solid; border-width:thin; border-radius: 25px; margin:auto; width:50%; background-color:white;' class='col-md-6 col-lg-6 position-static p-4 mb-3'><h5>" + evento.Nombre + "</h5><p>" + evento.Descripcion.ToString() + "</p>"));
 
                     ContentArea.Controls.Add(new LiteralControl("<a href='PaginaEvento.aspx?idEvento=" + evento.IdEvento + "' runat='server'>Click par la pagina principal</a></div>"));
                 }
@@ -40,7 +41,7 @@ namespace NatureEventV2
                     
                  //   var p = new HtmlGenericControl("p") { InnerText = evento.Nombre.ToString() + " " + evento.FechaInicio };
                  //   ContentArea.Controls.Add(p);
-                      ContentArea.Controls.Add(new LiteralControl("<div style='border-style:solid; border-width:thin;' class='col-md-6 col-lg-6 position-static p-4 mb-3'><h5>" + evento.Nombre + "</h5><p>" + evento.Descripcion.ToString() +"</p>"));
+                      ContentArea.Controls.Add(new LiteralControl("<div style='border-style:solid; border-width:thin; border-radius: 25px; margin:auto; width:50%; background-color:white;' class='col-md-6 col-lg-6 position-static p-4 mb-3'><h5>" + evento.Nombre + "</h5><p>" + evento.Descripcion.ToString() +"</p>"));
   
                       ContentArea.Controls.Add(new LiteralControl("<a href='PaginaEvento.aspx?idEvento="+evento.IdEvento+ "' runat='server'>Click par la pagina principal</a></div>"));
 

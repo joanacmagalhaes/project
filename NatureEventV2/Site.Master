@@ -4,6 +4,7 @@
 
 <html lang="es">
 <head runat="server">
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +18,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body>
+<body style="background-image:url()">
     <form runat="server">
         <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqYVkNUW99uD9gb1YRVpQtpicnUFXDOt05i27d7828ZAmXLnEgAlIL8k9NG0UGOc' async defer></script>
         <asp:ScriptManager runat="server">
@@ -80,7 +81,7 @@
             </asp:ContentPlaceHolder>
 
         </div>
-        <div class="mt-2"></div>
+        <div clas mb-5-2 mb-5"></div>
         <!-- Footer -->
         <footer class="bg-info text-white text-center text-lg-start footer">
             <!-- Grid container -->

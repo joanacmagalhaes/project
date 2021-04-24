@@ -9,6 +9,7 @@ namespace NatureEventV2
 {
     public partial class PaginaEvento : System.Web.UI.Page
     {
+        private CheckBoxList Cbx;
         protected void Page_Load(object sender, EventArgs e)
         {
             //Application["IdEven"] = Request.QueryString["idEvento"];
@@ -30,8 +31,58 @@ namespace NatureEventV2
             LabelFechaFinal.Text = even.FechaFinal;
             LabelFechaInicio.Text = even.FechaInicio;
 
+            if (ContentTemplate2.FindControl("asistenciachecklist") == null)
+            {
+                ContentTemplate2.Controls.Clear();
+                DALEvento dalEven2 = new DALEvento();
+                List<Usuario> usuarios = new List<Usuario>();
+                usuarios = dalEven2.selectUsuariByIdEvento((int)Application["IdEven"]);
+
+                CheckBoxList checkList = new CheckBoxList();
+                checkList.EnableViewState = true;
+                checkList.ID = "asistenciachecklist";
+
+
+                foreach (Usuario usu in usuarios)
+                {
+
+                    ListItem li = new ListItem();
+                    li.Text = usu.Nombre + " " + usu.Apellido;
+                    li.Value = (usu.IdUsuario).ToString();
+                    checkList.Items.Add(li);
+
+
+                }
+                ContentTemplate2.Controls.Add(checkList);
+            }
+
         }
 
+        protected void ButtonAsistencia (object sender, EventArgs e)
+        {
+            
+           
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+            ContentArea.Update();
+        }
+
+        public void ButtonAsistencia_Click(object sender, EventArgs e)
+        {
+            DALAsistencia dalasis = new DALAsistencia();
+            this.Cbx = (CheckBoxList)this.ContentTemplate2.FindControl("asistenciachecklist");
+            foreach (ListItem usuario in Cbx.Items)
+            {
+                asistencia asis = new asistencia();
+                asis.RIdUsuario = Convert.ToInt32(usuario.Value);
+                asis.RIdEvento = (int)Application["IdEven"];
+                if (usuario.Selected) { asis.Asistir = 1; }
+                else { asis.Asistir = 0; }
+                dalasis.UpdateAsistenciaByIdEvento(asis);
+
+            }
+            ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "Pop", "$('#myModal').modal('hide');", true);
+
+        }
         protected void ButtonEditar_Click(object sender, EventArgs e)
         {
             Evento even = new Evento();
