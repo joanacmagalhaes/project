@@ -35,7 +35,7 @@
                 <div class="custom-control custom-checkbox">
                   <asp:label id="errorLogin" runat="server" Visible="False" Text="Email o contraseña incorrectas"></asp:label>
                 </div>
-                <asp:Button ID="Button1" runat="server" Class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" OnClick="Button1_Click" Text="Regístrate" />
+                <asp:Button ID="Button1" runat="server" Class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" OnClick="Button1_Click" Text="Iniciar Sesión" />
                 <div class="text-center">
                   <asp:HyperLink class="small" NavigateUrl="RegistroUsuario.aspx" runat="server">¿No tienes una cuenta? Regístrate aquí.</asp:HyperLink></div>
               </form>
