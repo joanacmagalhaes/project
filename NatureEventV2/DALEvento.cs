@@ -340,11 +340,8 @@ namespace NatureEventV2
                 cmd.ExecuteNonQuery();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                //Console.Write(ex.Message);
-                //Console.WriteLine("Ha habido un error a la hora de hacer el UPDATE:\n" + ex.Message );
-                //MessageBox.Show("Ha habido un error con el UPDATE:\n" + ex.Message);
             }
         }
         public List<Usuario> selectUsuariByIdEvento(int idEvento)

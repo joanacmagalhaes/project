@@ -58,7 +58,7 @@ namespace NatureEventV2
                 this.TextBoxEmail.Text = "";
                 this.TextNombre.Text = "";
             }
-            catch (Exception ex) {
+            catch (Exception) {
                 this.TextMensajeInfo.Text = "<div class='alert alert-warning alert-dismissible'><a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a> <strong>Fallo!</strong> Ha ocurrido un error en la conexión del servidor, prueba más tarde.</div>";
             }
         }

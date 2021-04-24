@@ -48,7 +48,7 @@ namespace NatureEventV2
                     Server.Transfer("Login.aspx");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //throw new Exception("Error validar_click:" + ex.Message);
             }
@@ -276,9 +276,8 @@ namespace NatureEventV2
                     return false;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine(ex.Message);
                 return false;
             }
         }
