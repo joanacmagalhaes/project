@@ -38,7 +38,7 @@ namespace NatureEventV2
                     usuario.Nombre = TxtUsuario.Text;
                     usuario.Apellido = TxtApellido.Text;
                     usuario.Email = TxtEmail.Text;
-                    usuario.Pwd = TxtContrasenya.Text;
+                    usuario.Pwd = EncriptarPassword(TxtContrasenya.Text);
                     usuario.Dni = TxtDNI.Text;
                     usuario.FechaNac = Convert.ToDateTime(TxtFecha.Text);
                     usuario.Direccion = TxtDireccion.Text;
@@ -50,7 +50,7 @@ namespace NatureEventV2
             }
             catch (Exception ex)
             {
-                throw new Exception("Error validar_click:" + ex.Message);
+                //throw new Exception("Error validar_click:" + ex.Message);
             }
 
         }
