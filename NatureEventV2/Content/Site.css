@@ -3,7 +3,15 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: ghostwhite;
+    background-color: #D9ED92 !important;
+    background-image:url("img/bg.png");
+    background-position: center !important;
+    background-size: 170% !important;
+    background-repeat: repeat-x !important;
+    background-attachment: unset !important;
+}
+
+
 }
 
 /* Wrapping element */
