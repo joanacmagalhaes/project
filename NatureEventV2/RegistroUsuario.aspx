@@ -39,11 +39,10 @@
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
-          <div class="row">
-              <h3 class="login-heading mb-4">REGISTRO DE USUARIO</h3>
-              <form>
-           </div>
             <div class="row">
+                <div class="col-md-12">
+                    <h3 class="login-heading mb-4">REGISTRO DE USUARIO</h3>
+                </div>
                 <div class="col-md-6 col-lg-6 mx-auto">
                     <div class="form-label-group">
                         <asp:TextBox class="form-control" ID="TxtUsuario"  runat="server"></asp:TextBox>
@@ -93,7 +92,6 @@
                 </div>
                 </div>
                 <asp:Button ID="BtnValidar" runat="server" Class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" OnClick="validar_click" Text="Validar" />
-              </form>
           </div>
         </div>
       </div>
