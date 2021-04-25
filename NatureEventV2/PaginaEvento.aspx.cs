@@ -12,49 +12,57 @@ namespace NatureEventV2
         private CheckBoxList Cbx;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Application["IdEven"] = Request.QueryString["idEvento"];
-            Application["IdEven"] = Convert.ToInt32(Request.QueryString["idEvento"]);
-
-            switch (Session["user"])
+            if (Session["idUser"] == null)
             {
-                case 1:
-                    ButtonEditar.Visible = true;
-                    ButAsistencia.Visible = true;
-                    break;
+                Server.Transfer("Default.aspx");
             }
-            DALEvento dalEven = new DALEvento();
-            Evento even = new Evento();
-            even = dalEven.SelectEventoById((int)Application["IdEven"]);
-            LabelNombreEvento.Text = even.Nombre;
-            LabelDescripcion.Text = even.Descripcion;
-            LabelDirecionEvento.Text = even.Direccion;
-            LabelFechaFinal.Text = even.FechaFinal;
-            LabelFechaInicio.Text = even.FechaInicio;
-
-            if (ContentTemplate2.FindControl("asistenciachecklist") == null)
+            else
             {
-                ContentTemplate2.Controls.Clear();
-                DALEvento dalEven2 = new DALEvento();
-                List<Usuario> usuarios = new List<Usuario>();
-                usuarios = dalEven2.selectUsuariByIdEvento((int)Application["IdEven"]);
+                Application["IdEven"] = Convert.ToInt32(Request.QueryString["idEvento"]);
 
-                CheckBoxList checkList = new CheckBoxList();
-                checkList.EnableViewState = true;
-                checkList.ID = "asistenciachecklist";
-
-
-                foreach (Usuario usu in usuarios)
+                switch (Session["user"])
                 {
-
-                    ListItem li = new ListItem();
-                    li.Text = usu.Nombre + " " + usu.Apellido;
-                    li.Value = (usu.IdUsuario).ToString();
-                    checkList.Items.Add(li);
-
-
+                    case 1:
+                        ButtonEditar.Visible = true;
+                        ButAsistencia.Visible = true;
+                        break;
                 }
-                ContentTemplate2.Controls.Add(checkList);
+                DALEvento dalEven = new DALEvento();
+                Evento even = new Evento();
+                even = dalEven.SelectEventoById((int)Application["IdEven"]);
+                LabelNombreEvento.Text = even.Nombre;
+                LabelDescripcion.Text = even.Descripcion;
+                LabelDirecionEvento.Text = even.Direccion;
+                LabelFechaFinal.Text = even.FechaFinal;
+                LabelFechaInicio.Text = even.FechaInicio;
+
+                if (ContentTemplate2.FindControl("asistenciachecklist") == null)
+                {
+                    ContentTemplate2.Controls.Clear();
+                    DALEvento dalEven2 = new DALEvento();
+                    List<Usuario> usuarios = new List<Usuario>();
+                    usuarios = dalEven2.selectUsuariByIdEvento((int)Application["IdEven"]);
+
+                    CheckBoxList checkList = new CheckBoxList();
+                    checkList.EnableViewState = true;
+                    checkList.ID = "asistenciachecklist";
+
+
+                    foreach (Usuario usu in usuarios)
+                    {
+
+                        ListItem li = new ListItem();
+                        li.Text = usu.Nombre + " " + usu.Apellido;
+                        li.Value = (usu.IdUsuario).ToString();
+                        checkList.Items.Add(li);
+
+
+                    }
+                    ContentTemplate2.Controls.Add(checkList);
+                }
             }
+            
+           
 
         }
 
