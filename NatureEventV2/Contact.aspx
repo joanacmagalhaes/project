@@ -48,7 +48,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="subject" class="">Asunto</label>
-                            <asp:TextBox ID="TextBoxAsunto" TextMode="SingleLine" runat="server" CssClass="form-control inputMaxWidth" MaxLength="100"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxAsunto" TextMode="SingleLine" runat="server" Class="form-control inputMaxWidth" MaxLength="100"></asp:TextBox>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
 
 
                 <div class="form-group">
-                    <asp:Button CssClass="btn btn-primary" ID="btnEnviar" Text="Enviar" OnClick="btnEnviar_Click" runat="server" />
+                    <asp:Button Class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" ID="btnEnviar" Text="Enviar" OnClick="btnEnviar_Click" runat="server" />
                 </div>
             </div>
 

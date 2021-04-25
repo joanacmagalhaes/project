@@ -11,23 +11,26 @@ namespace NatureEventV2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DALEmpresa dalEmpresa = new DALEmpresa();
-            DALEvento dalEvento = new DALEvento();
-            Empresa empresa = new Empresa();
-            List<Evento> eventos = new List<Evento>();
+            if (Session["idUser"] == null)
+            {
+                Server.Transfer("Default.aspx");
+            }
+            else
+            {
+                DALEmpresa dalEmpresa = new DALEmpresa();
+                DALEvento dalEvento = new DALEvento();
+                Empresa empresa = new Empresa();
+                List<Evento> eventos = new List<Evento>();
 
-            empresa = dalEmpresa.SelectEmpresaById((int)Session["idUser"]);
-            eventos = dalEvento.SelectListEventosByIdEmpresa((int)Session["idUser"]);
+                empresa = dalEmpresa.SelectEmpresaById((int)Session["idUser"]);
+                eventos = dalEvento.SelectListEventosByIdEmpresa((int)Session["idUser"]);
 
-            LabelNombreEmpresa.Text = empresa.Nombre;
-            LabelEmail.Text = empresa.Email;
-            LabelTelefono.Text = empresa.Telefono.ToString();
-            LabelDireccion.Text = empresa.Direccion;
-            LabelCif.Text = empresa.Cif;
-
-            ////foreach (Evento evento in eventos) {
-            ////    listBoxEventosEmpresa1.Items.Add(evento.ToString());
-            //}
+                LabelNombreEmpresa.Text = empresa.Nombre;
+                LabelEmail.Text = empresa.Email;
+                LabelTelefono.Text = empresa.Telefono.ToString();
+                LabelDireccion.Text = empresa.Direccion;
+                LabelCif.Text = empresa.Cif;
+            }
         }
 
         protected void ButtonEditar_Click(object sender, EventArgs e)

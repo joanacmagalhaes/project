@@ -12,17 +12,25 @@ namespace NatureEventV2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DALUsuario dalUser = new DALUsuario();
-            Usuario user = new Usuario();
+            if (Session["idUser"] == null)
+            {
+                Server.Transfer("Default.aspx");
+            }
+            else
+            {
+                DALUsuario dalUser = new DALUsuario();
+                Usuario user = new Usuario();
 
-            user = dalUser.SelectUsuarioById((int)Session["idUser"]);
+                user = dalUser.SelectUsuarioById((int)Session["idUser"]);
 
-            LabelNombre.Text = user.Nombre;
-            LabelApellidos.Text = user.Apellido;
-            LabelEmail.Text = user.Email;
-            LabelTelefono.Text = user.Telefono.ToString();
-            LabelDireccion.Text = user.Direccion;
-            LabelDni.Text = user.Dni;
+                LabelNombre.Text = user.Nombre;
+                LabelApellidos.Text = user.Apellido;
+                LabelEmail.Text = user.Email;
+                LabelTelefono.Text = user.Telefono.ToString();
+                LabelDireccion.Text = user.Direccion;
+                LabelDni.Text = user.Dni;
+            }
+            
 
         }
 

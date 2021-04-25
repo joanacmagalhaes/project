@@ -11,7 +11,7 @@
                         <div class="col-sm-4 col-md-4 bg-c-lite-green user-profile">
                             <div class="card-block text-center" style="margin-top:40%">
                                 <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
-                                <asp:TextBox ID="TextBoxNombreEmpresa" runat="server" Visible="False" ></asp:TextBox>
+                                <asp:TextBox ID="TextBoxNombreEmpresa" runat="server" Visible="False" Class="form-control inputMaxWidth" MaxLength="100" ></asp:TextBox>
                                  <asp:Label ID="LabelNombreEmpresa" runat="server" Text="Nombre"></asp:Label>
                                  <p class="mt-2"> <asp:Button ID="ButtonEditar" runat="server" Text="Editar" OnClick="ButtonEditar_Click" /></p>
                             </div>
