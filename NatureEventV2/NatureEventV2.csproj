@@ -158,6 +158,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\background-body.jpg" />
     <Content Include="Content\img\bg.png" />
+    <Content Include="Content\img\foto-daniel.jpeg" />
+    <Content Include="Content\img\foto-diego.jpeg" />
+    <Content Include="Content\img\foto-joana.jpeg" />
+    <Content Include="Content\img\Perfil-Jonatan.png" />
     <Content Include="Content\img\linkedin_icon_35x35.png" />
     <Content Include="Content\img\logo.svg" />
     <Content Include="Content\Site.css" />

@@ -49,20 +49,13 @@ textarea {
     bottom: 0;
     left: 0;
 }
+.rounded-j {
+    border-radius: 65px;
+}
+.img-perfil {
+    height: 150px;
+}
 
-/*DataPicker*/
-#ui-datepicker-div{
-    background-color:lightsteelblue;
-    width:185px;
-    border-radius:5px;
-}
-.ui-datepicker-calendar, .ui-datepicker-header {
-    margin: 10px;
-}
-.ui-datepicker-next, .ui-datepicker-year {
-    float: right;
-}
-/*Fin DataPicker*/
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {
