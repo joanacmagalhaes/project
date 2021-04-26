@@ -48,7 +48,7 @@ body{
                 </div>
                 <div class="row">
                     <div class="card-block text-center mt-3 form-label-group">
-                        <b>Direcion</b>
+                        <b>Dirección</b>
                         <asp:Label ID="LabelDirecionEvento" runat="server"></asp:Label>
                         <asp:TextBox class="form-control" ID="TextDirecionEvento" runat="server" Visible="false"></asp:TextBox>
                     </div>
@@ -89,7 +89,7 @@ body{
           <asp:Panel ID="ContentTemplate2" runat="server"></asp:Panel>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <asp:Button ID="guardarAsistencia" runat="server" Text="Guardar" class="btn btn-primary" OnClick="ButtonAsistencia_Click"/>
       </div>
     </div>

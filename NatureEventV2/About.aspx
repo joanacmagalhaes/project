@@ -24,30 +24,33 @@
                         <h5 class="text-bold">Jonatan García Romero</h5>
                     </div>
                     <div class="text-md-left">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus dolor eget nulla eleifend, nec scelerisque neque rutrum. Maecenas eget justo pellentesque eros finibus ultrices. Phasellus faucibus eu risus id hendrerit. Praesent et euismod justo. Nunc pretium sapien arcu, quis dapibus nulla euismod at. Vivamus bibendum suscipit felis sed hendrerit.
+                        <b>Desarrollador de Aplicaciones Web</b><br />
+                            En esta aventura mis funciones eran muchas debido a nuestro limitado numero de miembros para este proyecto. Si bien trabaje en muchos campos mis asignaciones fueron más a la lógica de negocio, siendo la integración y la usabilidad de la API Bing Maps mi mayor cometido. También supervise el uso de GIT entre mis compañeros para evitar conflictos entre versiones. 
                     </div>
                     
                     <div class="mt-2">
-                        <a href="https://www.linkedin.com/in/jgarcia-07/" class="float-left">&nbsp@jgarcia-07
-                            <img src="Content/img/linkedin_icon_35x35.png" class="rounded float-left"/>
+                        <a href="https://www.linkedin.com/in/jgarcia-07/" class="float-left">                                   
+                            <img src="Content/img/linkedin_icon_35x35.png" class="rounded float-right"/>&nbsp@jgarcia-07
                         </a>
                     </div>
                     
                 </div>
                 <div class="offset-md-1 col-md-2">
-                    <img src="Content\img\logo.svg" class="rounded mt-5"/>
+                    <img src="Content/img/Perfil-Jonatan.png" class="rounded-circle mt-5 img-perfil"/>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="offset-md-2 col-md-2">
-                    <img src="Content\img\logo.svg" class="rounded mt-5"/>
+                    <img src="Content/img/foto-joana.jpeg" class="rounded-j img-perfil mt-5"/>
                 </div>
                 <div class="offset-md-1 col-md-5">
                     <div>
                         <h5 class="text-bold text-md-right">Joana Magalhães</h5>
                     </div>
                     <div class="text-md-right">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus dolor eget nulla eleifend, nec scelerisque neque rutrum. Maecenas eget justo pellentesque eros finibus ultrices. Phasellus faucibus eu risus id hendrerit. Praesent et euismod justo. Nunc pretium sapien arcu, quis dapibus nulla euismod at. Vivamus bibendum suscipit felis sed hendrerit.
+                        <b>Desarrolladora de C#</b><br />
+                            En este proyecto me encargo de crear algunas funcionalidades, como las páginas Historial de eventos, la página de información de Eventos y la funcionalidad de asistencia. Pero contribuí con cosas en cada página, cuando fue necesario. He ayudado en el diseño general de la página.                    
+
                     </div>
                     
                     <div class="mt-2">
@@ -64,7 +67,8 @@
                         <h5 class="text-bold">Daniel Diaz Montes</h5>
                     </div>
                     <div class="text-md-left">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus dolor eget nulla eleifend, nec scelerisque neque rutrum. Maecenas eget justo pellentesque eros finibus ultrices. Phasellus faucibus eu risus id hendrerit. Praesent et euismod justo. Nunc pretium sapien arcu, quis dapibus nulla euismod at. Vivamus bibendum suscipit felis sed hendrerit.
+                       <b>Técnico informático</b><br />
+                        En este proyecto me he encargado de ayudar a resolver conflictos y ayudar al resto del equipo. Me he encargado tanto de Front-end como de Back-end y he estado mas pendiente del registro y del historial de eventos.
                     </div>
                     
                     <div class="mt-2">
@@ -75,19 +79,20 @@
                     
                 </div>
                 <div class="offset-md-1 col-md-2">
-                    <img src="Content\img\logo.svg" class="rounded mt-5"/>
+                    <img src="Content/img/foto-daniel.jpeg" class="rounded-circle img-perfil mt-5"/>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="offset-md-2 col-md-2">
-                    <img src="Content\img\logo.svg" class="rounded mt-5"/>
+                    <img src="Content/img/foto-diego.jpeg" class="rounded-circle mt-5 img-perfil"/>
                 </div>
                 <div class="offset-md-1 col-md-5">
                     <div>
                         <h5 class="text-bold text-md-right">Diego Miguel Soler Aparicio</h5>
                     </div>
                     <div class="text-md-right">
-                        Desarrollador de Aplicaciones Multiplataforma. En este proyecto me he encargado de la gestión del equipo y organización gracias a la herramienta Trello, así como he estado ayudando tanto en Back-end como en Front-end. He intervenido en el desarrollo de los perfiles tanto de usuario como de las organizaciones y he ayudado en el diseño general de la página, tanto con la <i>User Interface</i> como la <i>User Experience</i>.
+                       <b>Desarrollador de Aplicaciones Web</b><br />
+                        En este proyecto me he encargado de la gestión del equipo y organización gracias a la herramienta Trello, así como he estado ayudando tanto en Back-end como en Front-end. He intervenido en el desarrollo de los perfiles tanto de usuario como de las organizaciones y he ayudado en el diseño general de la página, tanto con la <i>User Interface</i> como la <i>User Experience</i>.
                     </div>
                     
                     <div class="mt-2">

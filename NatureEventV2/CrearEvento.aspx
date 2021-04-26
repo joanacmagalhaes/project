@@ -65,7 +65,7 @@
         </div>
 
         <div class="form-group">
-            <asp:Button ID="Button1" runat="server" Text="Subir Evento" CssClass="form-control btn btn-primary inputMaxWidth" OnClick="ButtonCrearEvento_Click" />
+            <asp:Button ID="Button1" runat="server" Text="Crear" CssClass="form-control btn btn-primary inputMaxWidth" OnClick="ButtonCrearEvento_Click" />
         </div>
 
     </div>
