@@ -12,7 +12,7 @@ body{
 }
 </style>
     <div id="submenu" class="mt-2 mb-5" style=" height:4%; ">
-            <p><a style="color:gray;" href="Server.Transfer("HistorialEventos.aspx");">Historial Eventos</a> &nbsp > &nbsp <b style="color:darkslategray">Evento</b></p>
+            <p><a style="color:gray;" href="Server.Transfer('HistorialEventos.aspx');">Historial Eventos</a> &nbsp > &nbsp <b style="color:darkslategray">Evento</b></p>
     </div>
     <div class="container mt-5">
         <div class="row">
