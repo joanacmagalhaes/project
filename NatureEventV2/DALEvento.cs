@@ -173,7 +173,7 @@ namespace NatureEventV2
                     evento.PosY = Double.Parse(dr["PosY"].ToString());
                     evento.FechaInicio = dr["FechaInicio"].ToString().Replace('{', ' ');
                     evento.FechaFinal = dr["FechaFinal"].ToString().Replace('{', ' ');
-                    evento.NombreEmpresa = dALEmpresa.SelectNombreEmpresaById(evento.IdEvento);
+                    evento.NombreEmpresa = (string)dr["NombreEmpresa"];
                     eventos.Add(evento);
                 }
 
