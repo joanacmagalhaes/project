@@ -17,7 +17,7 @@
                 <asp:TextBox ID="TextBoxNombreActividad" runat="server" CssClass="form-control inputMaxWidth" placeholder="Nombre actividad" ControlToValidate="TargetControlId" ErrorMessage="Campo Obligatorio"></asp:TextBox>
             </div>
             <div class="form-group">
-                <asp:TextBox ID="CalendarFechaInicio" CssClass="form-control inputMaxWidth" runat="server" placeholder="Fecha inicio"
+                <asp:TextBox ID="CalendarFechaInicio" TextMode="Date" CssClass="form-control inputMaxWidth" runat="server" placeholder="Fecha inicio"
                     ControlToValidate="TargetControlId" ErrorMessage="Campo Obligatorio"></asp:TextBox>
             </div>
             <div class="form-group">
@@ -33,7 +33,7 @@
             </div>
 
             <div class="form-group">
-                <asp:TextBox ID="CalendarFechaFinal" CssClass="form-control inputMaxWidth" runat="server" placeholder="Fecha final"
+                <asp:TextBox ID="CalendarFechaFinal" TextMode="Date" CssClass="form-control inputMaxWidth" runat="server" placeholder="Fecha final"
                     ControlToValidate="TargetControlId" ErrorMessage="Campo Obligatorio"></asp:TextBox>
 
             </div>
@@ -57,13 +57,13 @@
         </div>
         <div class="col-md-12">
             <div class="form-group">
-                <div class="alert alert-info alert-dismissible" >
+                <div class="alert alert-info alert-dismissible">
                     <strong>Información:</strong> Haz clic en el mapa donde vas a llevar acabo el evento.
                 </div>
                 <div id="myMap" style="position: relative; width: 100%; height: 300px;"></div>
             </div>
         </div>
-        
+
         <div class="form-group">
             <asp:Button ID="Button1" runat="server" Text="Subir Evento" CssClass="form-control btn btn-primary inputMaxWidth" OnClick="ButtonCrearEvento_Click" />
         </div>
@@ -71,7 +71,6 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
         var map, pin;
@@ -95,23 +94,5 @@
             }
         }
 
-        $('#MainContent_CalendarFechaInicio').datepicker(
-            {
-                dateFormat: 'dd/mm/yy',
-                timeFormat: "hh:mm:ss",
-                changeMonth: true,
-                changeYear: true,
-                minDate: +7
-
-            });
-        $('#MainContent_CalendarFechaFinal').datepicker(
-            {
-                dateFormat: 'dd/mm/yy',
-                timeFormat: "hh:mm:ss",
-                changeMonth: true,
-                changeYear: true,
-                minDate: +7
-
-            });
     </script>
 </asp:Content>
