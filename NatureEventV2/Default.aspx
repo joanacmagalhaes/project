@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-5">
             <label><b>Fecha de inicio:</b></label>
-            <asp:TextBox ID="FilterDate" runat="server"></asp:TextBox>
+            <asp:TextBox TextMode="Date" ID="FilterDate" runat="server"></asp:TextBox>
         </div>
         <div class="col-md-2">
             <button type="button" id="BtnFiltro" class="btn btn-success" onclick="mapaFilter()">Aplicar Filtro</button>
@@ -31,7 +31,6 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
     <script type='text/javascript'>
         function unirseEvento(idEvento) {
@@ -92,17 +91,6 @@
 
             }
         }
-
-        $('#MainContent_FilterDate').datepicker(
-            {
-                dateFormat: 'dd/mm/yy',
-                timeFormat: "hh:mm:ss",
-                changeMonth: true,
-                changeYear: true,
-                minDate: 0
-
-        });
-
 
         var map, infobox, pin;
 

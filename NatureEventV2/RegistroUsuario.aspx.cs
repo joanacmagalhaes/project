@@ -12,6 +12,8 @@ namespace NatureEventV2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            TxtFecha.Attributes["min"] = DateTime.Now.AddYears(-100).ToString("yyyy-MM-dd");
+            TxtFecha.Attributes["max"] = DateTime.Now.AddYears(-16).ToString("yyyy-MM-dd");
 
         }
 

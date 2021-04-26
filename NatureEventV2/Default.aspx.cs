@@ -14,6 +14,8 @@ namespace NatureEventV2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            FilterDate.Attributes["min"] = DateTime.Now.ToString("yyyy-MM-dd");
+
             if (Session["idUser"] != null) HiddenFieldSessionID.Value = Session["idUser"].ToString();
             if (Session["user"] != null) HiddenFieldTypeUser.Value = Session["user"].ToString();
 

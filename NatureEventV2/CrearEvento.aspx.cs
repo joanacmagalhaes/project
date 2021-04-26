@@ -12,6 +12,8 @@ namespace NatureEventV2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CalendarFechaInicio.Attributes["min"] = DateTime.Now.AddDays(7).ToString("yyyy-MM-dd");
+            CalendarFechaFinal.Attributes["min"] = DateTime.Now.AddDays(7).ToString("yyyy-MM-dd");
 
         }
 
