@@ -26,7 +26,7 @@ body {
                         </div>
                         <div class="col-sm-8 col-md-8" style="margin-top:10%">
                             <div class="card-block mt-4">
-                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Información</h6>
                                 <hr  style="width:90%; margin-left:0;"/>
                                 <div class="row">
                                     <div class="col-sm-6 mt-4">
@@ -46,8 +46,8 @@ body {
                                     </div>
                                     <div class="col-sm-6 mt-4 mb-5">
                                         <asp:TextBox class="form-control" ID="TextBoxDni" runat="server" Visible="False"></asp:TextBox>
-                                        <asp:Label ID="LabelDni" runat="server" Text="Dni"></asp:Label>
-                                        <a href="PaginaEvento.asp?ID=asp.></a>
+                                        <asp:Label ID="LabelDni" runat="server" Text="DNI"></asp:Label>
+                                        <!--<a href="PaginaEvento.asp?ID=asp.></a>-->
                                     </div>
                                 </div>     
                             </div>

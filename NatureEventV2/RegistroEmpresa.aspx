@@ -13,7 +13,7 @@
                             </div>
                             <div class="col-md-6 position-static p-4 pl-md-0">
                                 <h5 class="mt-0">Registro Usuario</h5>
-                                <p>Registrarse como usuario para poder acceder a los eventos, y ser parte de una comunidad que trabaja para mejorar este mundo al que pertenecemos. Al participar en eventos ganarás puntos y podrás canjearlos por premios. A qué esperas para empezar?</p>
+                                <p>Registrarse como usuario para poder acceder a los eventos, y ser parte de una comunidad que trabaja para mejorar este mundo al que pertenecemos. Al participar en eventos ganarás puntos y podrás canjearlos por premios. ¿A qué esperas para empezar?</p>
                                 <a href="RegistroUsuario.aspx" runat="server" class="stretched-link">Registro Usuario</a>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="Login.aspx" runat="server">Ya tienes cuenta? Aqui te dejo un enlace hacia el login!</a>
+                    <a href="Login.aspx" runat="server">¿Ya tienes cuenta? ¡Aquí te dejo un enlace hacia el login!</a>
                 </div>
 
             </div>
@@ -48,17 +48,17 @@
 
                                 <div class="form-label-group">
                                     <asp:TextBox class="form-control" ID="TxtDireccion" runat="server"></asp:TextBox>
-                                    <label id="dniTag" runat="server" for="TxtDireccion">Direccion</label>
+                                    <label id="dniTag" runat="server" for="TxtDireccion">Dirección</label>
                                 </div>
 
                                 <div class="form-label-group">
                                     <asp:TextBox class="form-control" ID="TxtEmail" runat="server"></asp:TextBox>
-                                    <label id="Label3" runat="server" for="TxtEmail">E-mail</label>
+                                    <label id="Label3" runat="server" for="TxtEmail">Email</label>
                                 </div>
 
                                 <div class="form-label-group">
                                     <asp:TextBox class="form-control" ID="TxtContrasenya2" runat="server" TextMode="Password"></asp:TextBox>
-                                    <label id="Label4" runat="server" for="TxtContrasenya2">Repetir Contrasenya</label>
+                                    <label id="Label4" runat="server" for="TxtContrasenya2">Repetir Contraseña</label>
                                 </div>
 
                             </div>
@@ -70,16 +70,16 @@
 
                                 <div class="form-label-group">
                                     <asp:TextBox class="form-control" ID="TxtTelefono" runat="server"></asp:TextBox>
-                                    <label id="Label1" runat="server" for="TxtTelefono">Telefono</label>
+                                    <label id="Label1" runat="server" for="TxtTelefono">Teléfono</label>
                                 </div>
 
                                 <div class="form-label-group">
                                     <asp:TextBox class="form-control" ID="TxtContrasenya" runat="server" TextMode="Password"></asp:TextBox>
-                                    <label id="Label5" runat="server" for="TxtContrasenya">Contrasenya</label>
+                                    <label id="Label5" runat="server" for="TxtContrasenya">Contraseña</label>
                                 </div>
                             </div>
                         </div>
-                        <asp:Button ID="BtnValidar" runat="server" Class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" OnClick="validar_empresa_click" Text="Validar" />
+                        <asp:Button ID="BtnValidar" runat="server" Class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" OnClick="validar_empresa_click" Text="Registrar" />
                     </div>
                 </div>
             </div>

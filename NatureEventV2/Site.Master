@@ -94,7 +94,7 @@
                     <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
                         <h5 class="text-uppercase">Agradecimientos</h5>
 
-                        <p>La fundación Esplai; Especialmente Pascal, Ruth ...
+                        <p>Nos gustaría agradecer a Fundación Esplai por la oportunidad y las herramientas para poder trabajar y crear esta página web. En concreto a Pascal por los fundamentos impartidos en las clases, Ruth por la espléndida tutoría que nos ha brindado y Araceli por las clases de transversales que tanto nos han ayudado. ¡Gracias!
                         </p>
                     </div>
                     <!--Grid column-->
@@ -105,10 +105,10 @@
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a class="text-white" runat="server" href="~/Contact">Contacto</a>
+                                <a class="text-white" runat="server" href="~/Contact">¡Contáctanos!</a>
                             </li>
                             <li>
-                                <a class="text-white" runat="server" href="~/About">Sobre nosotros</a>
+                                <a class="text-white" runat="server" href="~/About">¡Sobre Nosotros!</a>
                             </li>
                         </ul>
                     </div>

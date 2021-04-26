@@ -4,10 +4,10 @@
     <section class="mb-4">
 
         <!--Section heading-->
-        <h2 class="h1-responsive font-weight-bold text-center my-4">Contactanos</h2>
+        <h2 class="h1-responsive font-weight-bold text-center my-4">¡Contáctanos!</h2>
         <!--Section description-->
         <p class="text-center w-responsive mx-auto mb-5">
-            ¿Tienes alguna pregunta o duda? Por favor no dudes en contactarnos directamente. Nuestro equipo estará a tu disposición horas después de tu mensaje.
+            ¿Tienes algún problema o duda? Por favor no dudes en contactarnos directamente. Nuestro equipo estará encantado de estar a tu disposición.
         </p>
 
         <div class="row">
