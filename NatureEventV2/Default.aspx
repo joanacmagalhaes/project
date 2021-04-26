@@ -15,7 +15,7 @@
                 <asp:ListItem>Selecciona Organización</asp:ListItem>
             </asp:DropDownList>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 ">
             <label><b>Fecha de inicio:</b></label>
             <asp:TextBox ID="FilterDate" runat="server"></asp:TextBox>
         </div>

@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-md-6 position-static p-4 pl-md-0">
                     <h5 class="mt-0">Registro Usuario</h5>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                    <p>Registrarse como usuario para poder acceder a los eventos, y ser parte de una comunidad que trabaja para mejorar este mundo al que pertenecemos. Al participar en eventos ganarás puntos y podrás canjearlos por premios. A qué esperas para empezar?</p>
                     <a href="RegistroUsuario.aspx" runat="server" class="stretched-link">Registro Usuario</a>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-md-6 position-static p-4 pl-md-0">
                     <h5 class="mt-0">Registro Empresa</h5>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                    <p>Regístrese como empresa para poder sumar todos los eventos enfocados a la preservación del medio ambiente. Sea la razón por la que nuestros usuarios quieren aspirar a un mundo mejor.</p>
                     <%--<a href="RegistroEmpresa.aspx" runat="server" class="stretched-link">Registro Empresa</a>--%>
                 </div>
             </div>

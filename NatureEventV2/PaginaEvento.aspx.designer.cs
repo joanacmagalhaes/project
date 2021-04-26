@@ -33,15 +33,6 @@ namespace NatureEventV2
         protected global::System.Web.UI.WebControls.Label LabelNombreEvento;
 
         /// <summary>
-        /// Control LabelDescripcion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDescripcion;
-
-        /// <summary>
         /// Control TextDescripcion.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace NatureEventV2
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextDescripcion;
+
+        /// <summary>
+        /// Control LabelDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelDescripcion;
 
         /// <summary>
         /// Control TextFechaInicio.
