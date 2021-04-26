@@ -142,7 +142,7 @@ namespace NatureEventV2
             Evento evento;
             try
             {
-                string sql = @"SELECT * FROM Evento WHERE FechaInicio>@pFecha";
+                string sql = @"SELECT * FROM EventoBox WHERE FechaInicio>@pFecha";
                 SqlCommand cmd = new SqlCommand(sql, db.MiCnx);
                 SqlParameter pDate = new SqlParameter("pFecha", SqlDbType.DateTime);
                 if (fechaStart == "") fechaStart = DateTime.Now.ToString();
