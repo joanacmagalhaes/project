@@ -9,6 +9,10 @@ body{
 .footer{
     margin-top:10%;
 }
+
+#MainContent_ContentArea{
+    min-height:500px;
+}
 </style>
     <div class="container" runat="server" style="width:100%;">
             <h3 style="margin:auto; width:50%; margin-top:5%; margin-bottom:4%; text-align:center;">Eventos</h3>
